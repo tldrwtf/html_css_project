@@ -1,0 +1,346 @@
+/*
+    style.css
+    This file contains CSS styles for the semantic HTML example website.
+    Each section is commented to explain its purpose.
+*/
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles - sets font family, dark background color, light text color, and line height */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 60px; /* Add margin to prevent footer overlap */
+}
+
+/* Header styles - creates a dark purple header with light text */
+header {
+    background-color: #2d1b69;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Navigation styles - removes list styling and displays items inline */
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main content area - centers content with dark background and shadow */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Section spacing */
+section {
+    margin-bottom: 30px;
+}
+
+/* Heading styles */
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #bb86fc;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #bb86fc;
+    padding-bottom: 5px;
+}
+
+/* Paragraph styles */
+p {
+    margin-bottom: 15px;
+}
+
+/* Table styles - creates a professional looking dark table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    background-color: #333;
+}
+
+/* Table caption styling */
+caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #e0e0e0;
+}
+
+/* Table header styling - purple background with white text */
+thead th {
+    background-color: #bb86fc;
+    color: #1a1a1a;
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #bb86fc;
+}
+
+/* Table body styling - alternating row colors for dark theme */
+tbody td {
+    padding: 10px;
+    border: 1px solid #555;
+    color: #e0e0e0;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #3a3a3a;
+}
+
+tbody tr:hover {
+    background-color: #4a4a4a;
+}
+
+/* Table footer styling */
+tfoot td {
+    background-color: #444;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    border: 1px solid #555;
+    color: #e0e0e0;
+}
+
+/* Form styles - creates a styled dark form with proper spacing */
+form {
+    background: #333;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    border: 1px solid #555;
+}
+
+/* Form field container for better organization */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Label styles - makes labels bold and properly spaced for dark theme */
+label {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    width: 120px;
+    color: #e0e0e0;
+}
+
+/* Input field styles - consistent dark styling for all text inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    width: 250px;
+    font-size: 14px;
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+/* Focus states for better accessibility with purple accent */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    border-color: #bb86fc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(187, 134, 252, 0.3);
+}
+
+/* Radio button and checkbox styling */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Submit button styling - creates an attractive purple button */
+input[type="submit"] {
+    background-color: #bb86fc;
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Button hover effect */
+input[type="submit"]:hover {
+    background-color: #9c5ddb;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Line break styling in forms */
+br {
+    line-height: 1.8;
+}
+
+/* Footer styles - fixed at bottom with darker background */
+footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
+}
+
+/* Additional form styling for fieldsets and legends */
+fieldset {
+    border: 1px solid #555;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+}
+
+legend {
+    font-weight: bold;
+    color: #bb86fc;
+    padding: 0 10px;
+}
+
+/* Select dropdown styling for dark theme */
+select {
+    padding: 8px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    width: 250px;
+    font-size: 14px;
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+select:focus {
+    border-color: #bb86fc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(187, 134, 252, 0.3);
+}
+
+/* Textarea styling for dark theme */
+textarea {
+    padding: 8px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    resize: vertical;
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+textarea:focus {
+    border-color: #bb86fc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(187, 134, 252, 0.3);
+}
+
+/* Reset button styling for dark theme */
+input[type="reset"] {
+    background-color: #666;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+input[type="reset"]:hover {
+    background-color: #555;
+}
+
+/* Article and aside styling for dark theme */
+article {
+    background-color: #333;
+    padding: 20px;
+    border-left: 4px solid #bb86fc;
+    margin-bottom: 20px;
+}
+
+aside {
+    background-color: #2a2a3a;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    border-left: 3px solid #bb86fc;
+}
+
+/* Details and summary styling for collapsible content in dark theme */
+details {
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #2a2a2a;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #333;
+    border-radius: 3px;
+    color: #e0e0e0;
+}
+
+summary:hover {
+    background-color: #444;
+}
+
+/* List styling within sections */
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 5px;
+}

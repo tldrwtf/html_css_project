@@ -1,0 +1,806 @@
+/*
+    html-fundamentals.css
+    Styles for the HTML fundamentals demonstration page
+    This file demonstrates advanced CSS organization and dark theme styling
+*/
+
+/* Fundamentals overview section - introduces key concepts */
+.fundamentals-overview {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 25px 0;
+}
+
+/* Benefits grid - displays key advantages in a responsive layout */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Individual benefit cards - contain icons and descriptions */
+.benefit-card {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for benefit cards - provides visual feedback */
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Benefit icons - large emoji/unicode symbols for visual impact */
+.benefit-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Content sections - main containers for different topics */
+.content-section {
+    margin: 50px 0;
+    padding: 0;
+}
+
+/* Content section headings - consistent styling across sections */
+.content-section h2 {
+    color: #bb86fc;
+    border-bottom: 3px solid #bb86fc;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+/* Demo containers - highlight interactive examples */
+.demo-container {
+    background: #2a2a2a;
+    border: 2px solid #bb86fc;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Demo container headings - purple accent for consistency */
+.demo-container h3 {
+    color: #bb86fc;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Input demonstration form - showcases various input types */
+.input-demo-form {
+    max-width: 100%;
+}
+
+/* Input grid - organizes inputs into logical groups */
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 25px 0;
+}
+
+/* Input groups - contain related input types */
+.input-group {
+    background: #333;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #555;
+}
+
+/* Input group headings - organize types by category */
+.input-group h4 {
+    color: #bb86fc;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    border-bottom: 2px solid #555;
+    padding-bottom: 8px;
+}
+
+/* Form fields - individual input containers */
+.form-field {
+    margin-bottom: 20px;
+}
+
+/* Form field labels - provide clear descriptions */
+.form-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #e0e0e0;
+    font-size: 0.95em;
+}
+
+/* All input styles - consistent styling across input types */
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #666;
+    border-radius: 6px;
+    background: #444;
+    color: #e0e0e0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Focus styles - purple accent for accessibility */
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: #bb86fc;
+    box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.2);
+}
+
+/* Help text - provides guidance and context */
+.help-text {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.8em;
+    color: #bbb;
+    font-style: italic;
+}
+
+/* Fieldset styling - groups related form elements */
+fieldset {
+    border: 2px solid #555;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 10px 0;
+    background: #333;
+}
+
+/* Legend styling - describes fieldset purpose */
+legend {
+    color: #bb86fc;
+    font-weight: 600;
+    padding: 0 10px;
+    font-size: 1em;
+}
+
+/* Checkbox and radio groups - organize selection options */
+.checkbox-group,
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+/* Checkbox and radio labels - allow clicking on text */
+.checkbox-group label,
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+/* Checkbox and radio inputs - proper spacing */
+.checkbox-group input,
+.radio-group input {
+    width: auto;
+    margin-right: 8px;
+    margin-bottom: 0;
+}
+
+/* Form actions - submission button area */
+.form-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #555;
+    text-align: center;
+}
+
+/* Button styling - consistent across the page */
+.btn-primary,
+.btn-secondary,
+.btn-tertiary {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+/* Primary button - main call to action */
+.btn-primary {
+    background: #bb86fc;
+    color: #1a1a1a;
+}
+
+/* Primary button hover - visual feedback */
+.btn-primary:hover {
+    background: #9c5ddb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(187, 134, 252, 0.3);
+}
+
+/* Secondary button - alternative actions */
+.btn-secondary {
+    background: #666;
+    color: #e0e0e0;
+}
+
+/* Secondary button hover - subtle feedback */
+.btn-secondary:hover {
+    background: #555;
+    transform: translateY(-1px);
+}
+
+/* Tertiary button - less prominent actions */
+.btn-tertiary {
+    background: transparent;
+    color: #bb86fc;
+    border: 2px solid #bb86fc;
+}
+
+/* Tertiary button hover - fill effect */
+.btn-tertiary:hover {
+    background: #bb86fc;
+    color: #1a1a1a;
+}
+
+/* Demo table styling - showcases proper table structure */
+.demo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table caption - describes table content */
+.demo-table caption {
+    caption-side: top;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+    text-align: left;
+}
+
+/* Table headers - column titles */
+.demo-table th {
+    background: #bb86fc;
+    color: #1a1a1a;
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+/* Table data cells - contain the actual information */
+.demo-table td {
+    padding: 12px;
+    border-bottom: 1px solid #555;
+    color: #e0e0e0;
+}
+
+/* Table row hover - provides visual feedback */
+.demo-table tbody tr:hover {
+    background: #3a3a3a;
+}
+
+/* Status styling - color-coded for different states */
+.status-excellent {
+    color: #4caf50;
+    font-weight: 600;
+}
+
+.status-good {
+    color: #2196f3;
+    font-weight: 600;
+}
+
+.status-warning {
+    color: #ff9800;
+    font-weight: 600;
+}
+
+/* Table footer - summary information */
+.demo-table tfoot td {
+    background: #444;
+    font-weight: 600;
+    border-top: 2px solid #bb86fc;
+    padding: 15px 12px;
+}
+
+/* Schedule table - different styling for class schedule */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #333;
+    border: 1px solid #555;
+}
+
+/* Schedule table cells - consistent padding */
+.schedule-table th,
+.schedule-table td {
+    padding: 10px;
+    border: 1px solid #555;
+    text-align: center;
+}
+
+/* Schedule table headers - time and day headers */
+.schedule-table th {
+    background: #bb86fc;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* Schedule table time headers - left-aligned row headers */
+.schedule-table th[scope="row"] {
+    background: #444;
+    color: #e0e0e0;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Table explanation - describes table structure */
+.table-explanation {
+    margin-top: 25px;
+    padding: 20px;
+    background: #1f1f2e;
+    border-radius: 8px;
+    border-left: 4px solid #bb86fc;
+}
+
+/* Table explanation heading */
+.table-explanation h4 {
+    color: #bb86fc;
+    margin-bottom: 15px;
+}
+
+/* Table explanation list - describes elements */
+.table-explanation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Table explanation list items - individual descriptions */
+.table-explanation li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Bullet points for explanation list */
+.table-explanation li:before {
+    content: "→";
+    color: #bb86fc;
+    position: absolute;
+    left: 0;
+}
+
+/* ID benefits section - explains ID attribute uses */
+.id-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+/* Individual benefit items - showcase ID uses */
+.benefit-item {
+    background: #333;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #555;
+}
+
+/* Benefit item headings - include emoji for visual appeal */
+.benefit-item h4 {
+    color: #bb86fc;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+/* Example demonstrations - show practical applications */
+.example-demo {
+    background: #444;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    border-left: 3px solid #bb86fc;
+}
+
+/* Special demo box for CSS targeting example */
+#special-box {
+    background: linear-gradient(135deg, #bb86fc 0%, #9c5ddb 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+/* Demo navigation - shows internal linking */
+.demo-nav {
+    text-align: center;
+}
+
+/* Demo navigation links */
+.demo-nav a {
+    color: #bb86fc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Demo navigation hover effect */
+.demo-nav a:hover {
+    color: #9c5ddb;
+    text-decoration: underline;
+}
+
+/* Interactive demo button */
+#demo-button {
+    background: #bb86fc;
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Demo button hover effect */
+#demo-button:hover {
+    background: #9c5ddb;
+    transform: translateY(-2px);
+}
+
+/* Demo text element */
+#demo-text {
+    margin: 10px 0;
+    padding: 10px;
+    background: #555;
+    border-radius: 4px;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+}
+
+/* Accessible input demo */
+#accessible-input {
+    margin-top: 5px;
+}
+
+/* Best practices grid - shows do's and don'ts */
+.best-practices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+/* Practice cards - contain guidelines */
+.practice-card {
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px solid;
+}
+
+/* DO card - positive practices */
+.practice-do {
+    background: rgba(76, 175, 80, 0.1);
+    border-color: #4caf50;
+}
+
+/* DON'T card - practices to avoid */
+.practice-dont {
+    background: rgba(244, 67, 54, 0.1);
+    border-color: #f44336;
+}
+
+/* Practice card headings */
+.practice-card h4 {
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+/* DO card heading color */
+.practice-do h4 {
+    color: #4caf50;
+}
+
+/* DON'T card heading color */
+.practice-dont h4 {
+    color: #f44336;
+}
+
+/* Practice card lists */
+.practice-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Practice card list items */
+.practice-card li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.4;
+}
+
+/* DO list item bullets */
+.practice-do li:before {
+    content: "✓";
+    color: #4caf50;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* DON'T list item bullets */
+.practice-dont li:before {
+    content: "✗";
+    color: #f44336;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Structured form - comprehensive form example */
+.structured-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Field rows - organize fields horizontally */
+.field-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Field groups within structured forms */
+.structured-form .field-group {
+    margin-bottom: 15px;
+}
+
+/* Radio and checkbox fieldsets */
+.radio-fieldset,
+.checkbox-fieldset {
+    border: 1px solid #666;
+    background: #3a3a3a;
+    margin: 10px 0;
+}
+
+/* Form submission area */
+.form-submission {
+    background: #333;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+    border: 2px solid #555;
+}
+
+/* Button group - organizes action buttons */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Code examples - show HTML markup */
+.code-example {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 30px 0;
+    overflow-x: auto;
+    border-left: 4px solid #bb86fc;
+}
+
+/* Code example headings */
+.code-example h3 {
+    color: #90cdf4;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+/* Code blocks */
+.code-example pre {
+    margin: 15px 0 0 0;
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    line-height: 1.6;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Inline code elements */
+code {
+    background: #444;
+    color: #bb86fc;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}
+
+/* Summary section - page conclusion */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+/* Summary cards - key takeaways */
+.summary-card {
+    background: #404040;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #bb86fc;
+    border: 1px solid #555;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Summary card hover effect */
+.summary-card:hover {
+    transform: translateY(-3px);
+    background: #454545;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-color: #666;
+}
+
+/* Summary card headings */
+.summary-card h3 {
+    color: #bb86fc;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+/* Current page indicator in navigation */
+.current {
+    background: rgba(187, 134, 252, 0.2) !important;
+    font-weight: bold;
+}
+
+/* Responsive design - mobile optimization */
+@media (max-width: 768px) {
+    /* Stack input grid on mobile */
+    .input-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Stack field rows on mobile */
+    .field-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* Stack benefits grid on mobile */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Stack ID benefits on mobile */
+    .id-benefits {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Stack best practices on mobile */
+    .best-practices-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Stack summary cards on mobile */
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Horizontal button layout on mobile */
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Full width buttons on mobile */
+    .button-group button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Reduce padding on mobile */
+    .demo-container {
+        padding: 20px;
+    }
+    
+    /* Smaller font sizes on mobile */
+    .content-section h2 {
+        font-size: 1.8em;
+    }
+    
+    /* Vertical checkbox/radio groups on mobile */
+    .checkbox-group,
+    .radio-group {
+        gap: 12px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    /* Further reduce padding */
+    .demo-container {
+        padding: 15px;
+    }
+    
+    /* Smaller input groups */
+    .input-group {
+        padding: 15px;
+    }
+    
+    /* Smaller benefit cards */
+    .benefit-card {
+        padding: 15px;
+    }
+    
+    /* Smaller summary cards */
+    .summary-card {
+        padding: 15px;
+    }
+}
+
+/* Print styles - optimize for printing */
+@media print {
+    /* Hide interactive elements */
+    .demo-container,
+    .form-actions,
+    .button-group {
+        display: none;
+    }
+    
+    /* Use black text for printing */
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    /* Simplify headings for print */
+    h1, h2, h3 {
+        color: #000;
+        border-bottom: 1px solid #000;
+    }
+}
+
+/* Reduced motion preferences - accessibility */
+@media (prefers-reduced-motion: reduce) {
+    /* Disable animations for users who prefer reduced motion */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

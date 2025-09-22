@@ -1,0 +1,410 @@
+/*
+    semantic-elements.css
+    Additional styles for the semantic elements demonstration page
+*/
+
+/* Code example styling for dark theme */
+.code-example {
+    background: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.comparison {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.example-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.example-section h4 {
+    margin-bottom: 10px;
+    color: #bb86fc;
+}
+
+/* Code snippet styling for dark theme */
+.code-snippet {
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.code-snippet h4 {
+    margin-bottom: 10px;
+    color: #bb86fc;
+}
+
+pre {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.4;
+}
+
+code {
+    background: #444;
+    color: #bb86fc;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}
+
+/* Semantic element examples for dark theme */
+.semantic-element {
+    background: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.semantic-element h3 {
+    color: #bb86fc;
+    border-bottom: 2px solid #bb86fc;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* Demo examples styling for dark theme */
+.example-demo {
+    background: #1f1f2e;
+    border: 2px dashed #bb86fc;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 15px 0;
+}
+
+.example-demo h4 {
+    color: #bb86fc;
+    margin-bottom: 15px;
+}
+
+/* Demo header styling */
+.demo-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.demo-header h1 {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.demo-header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.demo-header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.2);
+    transition: background 0.3s ease;
+}
+
+.demo-header nav ul li a:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Demo navigation styling */
+.demo-nav {
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.demo-nav.primary {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+}
+
+.demo-nav.breadcrumb {
+    background: #3d2914;
+    border-left: 4px solid #ff9800;
+}
+
+.demo-nav ul, .demo-nav ol {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.demo-nav.breadcrumb ol li:not(:last-child)::after {
+    content: " → ";
+    margin-left: 10px;
+    color: #999;
+}
+
+.demo-nav a {
+    color: #bb86fc;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+}
+
+.demo-nav a:hover {
+    background: rgba(187, 134, 252, 0.2);
+}
+
+/* Demo section styling for dark theme */
+.demo-section {
+    background: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.demo-section h4 {
+    color: #bb86fc;
+    margin-bottom: 10px;
+}
+
+/* Demo article styling for dark theme */
+.demo-article {
+    background: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.demo-article header {
+    border-bottom: 1px solid #555;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.demo-article h4 {
+    color: #e0e0e0;
+    margin-bottom: 8px;
+}
+
+.demo-article .meta {
+    color: #999;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.demo-article footer {
+    border-top: 1px solid #555;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.demo-article .tag {
+    background: #444;
+    color: #bb86fc;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+/* Demo aside styling */
+.demo-aside {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-left: 4px solid #ff8a65;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+.demo-aside h4 {
+    color: #d84315;
+    margin-bottom: 10px;
+}
+
+/* Text examples styling for dark theme */
+.text-examples p {
+    margin: 10px 0;
+    padding: 8px;
+    background: #333;
+    border-radius: 4px;
+}
+
+.text-examples strong:first-child {
+    color: #bb86fc;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Special styling for semantic text elements in dark theme */
+mark {
+    background: #5a4d0a;
+    color: #ffd700;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+kbd {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85em;
+    box-shadow: 0 1px 3px rgba(255,255,255,0.1);
+    border: 1px solid #555;
+}
+
+samp {
+    background: #333;
+    color: #28a745;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid #555;
+}
+
+var {
+    color: #ff6b9d;
+    font-style: italic;
+    font-weight: bold;
+}
+
+abbr {
+    border-bottom: 1px dotted #bb86fc;
+    cursor: help;
+}
+
+dfn {
+    font-weight: bold;
+    color: #bb86fc;
+}
+
+time {
+    color: #bb86fc;
+    font-weight: 500;
+}
+
+/* Demo details styling for dark theme */
+.demo-details {
+    border: 1px solid #555;
+    border-radius: 6px;
+    margin: 10px 0;
+    background: #2a2a2a;
+}
+
+.demo-details summary {
+    background: #333;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 6px 6px 0 0;
+    font-weight: 600;
+    color: #e0e0e0;
+    transition: background 0.3s ease;
+}
+
+.demo-details summary:hover {
+    background: #444;
+}
+
+.demo-details p, .demo-details .details-content {
+    padding: 15px;
+    margin: 0;
+}
+
+.demo-details[open] summary {
+    border-bottom: 1px solid #555;
+    border-radius: 6px 6px 0 0;
+}
+
+/* Best practices styling */
+.best-practices {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 25px 0;
+}
+
+.best-practices h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.practice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.practice-item {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.practice-item h4 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.practice-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.practice-item li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.practice-item li:last-child {
+    border-bottom: none;
+}
+
+/* Current page indicator in navigation */
+.current {
+    background: rgba(255,255,255,0.2) !important;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .comparison {
+        flex-direction: column;
+    }
+    
+    .practice-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .demo-header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .demo-nav ul, .demo-nav ol {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

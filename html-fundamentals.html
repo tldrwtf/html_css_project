@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags provide essential information about the document -->
+    <meta charset="UTF-8"> <!-- Character encoding for proper text display -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design viewport -->
+    <meta name="description" content="HTML fundamentals including input types, tables, fields, and ID attributes"> <!-- SEO description -->
+    <title>HTML Fundamentals - Input Types, Tables & Fields</title>
+    <!-- External stylesheet link - separates styling from content -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="html-fundamentals.css">
+</head>
+<body>
+    <!-- Header contains the main site branding and navigation -->
+    <header>
+        <h1>HTML Fundamentals</h1>
+        <!-- Navigation provides site-wide links for user orientation -->
+        <nav>
+            <!-- Unordered list is semantically appropriate for navigation links -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="semantic-elements.html">Semantic HTML</a></li>
+                <li><a href="css-layouts.html">CSS Layouts</a></li>
+                <li><a href="forms-accessibility.html">Forms & Accessibility</a></li>
+                <li><a href="css-showcase.html">CSS Showcase</a></li>
+                <li><a href="html-fundamentals.html" class="current">HTML Fundamentals</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content area contains the primary page content -->
+    <main>
+        <!-- Introduction section explains the page purpose -->
+        <section id="introduction">
+            <h2>HTML Fundamentals Overview</h2>
+            <p>This page demonstrates essential HTML building blocks including various input types, properly structured tables, form fields, and the importance of ID attributes for accessibility and functionality.</p>
+            
+            <!-- Benefits overview helps users understand the value -->
+            <article class="fundamentals-overview">
+                <h3>Why HTML Fundamentals Matter</h3>
+                <div class="benefits-grid">
+                    <!-- Each benefit card explains a key concept -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📝</div>
+                        <h4>Form Functionality</h4>
+                        <p>Proper input types provide built-in validation, better mobile keyboards, and enhanced user experience</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📊</div>
+                        <h4>Data Organization</h4>
+                        <p>Well-structured tables make data accessible and easy to understand for all users</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔗</div>
+                        <h4>Element Identification</h4>
+                        <p>ID attributes enable JavaScript targeting, CSS styling, and accessibility enhancements</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">♿</div>
+                        <h4>Accessibility</h4>
+                        <p>Proper HTML structure ensures screen readers and assistive technologies work correctly</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Input Types Section - demonstrates various HTML5 input types -->
+        <section id="input-types" class="content-section">
+            <h2>HTML5 Input Types</h2>
+            <p>HTML5 introduced numerous input types that provide built-in validation, improved user interfaces, and better mobile experience.</p>
+            
+            <!-- Input types demonstration form -->
+            <article class="demo-container">
+                <h3>Interactive Input Types Demo</h3>
+                <p>Try each input type below to see how they behave differently:</p>
+                
+                <!-- Form groups organize related inputs logically -->
+                <form class="input-demo-form">
+                    <div class="input-grid">
+                        <!-- Text inputs group - basic text entry -->
+                        <div class="input-group">
+                            <h4>Text & String Inputs</h4>
+                            
+                            <!-- Standard text input - most common input type -->
+                            <div class="form-field">
+                                <label for="demo-text">Text Input:</label>
+                                <input type="text" id="demo-text" name="demo-text" placeholder="Enter any text">
+                                <!-- Help text explains the purpose and usage -->
+                                <small class="help-text">Basic text input for general text entry</small>
+                            </div>
+                            
+                            <!-- Email input - provides email validation and appropriate mobile keyboard -->
+                            <div class="form-field">
+                                <label for="demo-email">Email Input:</label>
+                                <input type="email" id="demo-email" name="demo-email" placeholder="user@example.com">
+                                <small class="help-text">Validates email format and shows @ key on mobile</small>
+                            </div>
+                            
+                            <!-- Password input - hides text for security -->
+                            <div class="form-field">
+                                <label for="demo-password">Password Input:</label>
+                                <input type="password" id="demo-password" name="demo-password" placeholder="Enter password">
+                                <small class="help-text">Masks input for security, often triggers password managers</small>
+                            </div>
+                            
+                            <!-- URL input - validates URL format -->
+                            <div class="form-field">
+                                <label for="demo-url">URL Input:</label>
+                                <input type="url" id="demo-url" name="demo-url" placeholder="https://example.com">
+                                <small class="help-text">Validates URL format and may show special mobile keyboard</small>
+                            </div>
+                            
+                            <!-- Search input - may show search-specific styling -->
+                            <div class="form-field">
+                                <label for="demo-search">Search Input:</label>
+                                <input type="search" id="demo-search" name="demo-search" placeholder="Search terms">
+                                <small class="help-text">May show clear button and search-specific styling</small>
+                            </div>
+                        </div>
+                        
+                        <!-- Number and date inputs group -->
+                        <div class="input-group">
+                            <h4>Numeric & Date Inputs</h4>
+                            
+                            <!-- Number input - restricts to numeric values with optional min/max -->
+                            <div class="form-field">
+                                <label for="demo-number">Number Input:</label>
+                                <input type="number" id="demo-number" name="demo-number" min="1" max="100" placeholder="1-100">
+                                <small class="help-text">Numeric only, with optional min/max validation</small>
+                            </div>
+                            
+                            <!-- Range input - provides slider interface -->
+                            <div class="form-field">
+                                <label for="demo-range">Range Input:</label>
+                                <input type="range" id="demo-range" name="demo-range" min="0" max="100" value="50">
+                                <small class="help-text">Slider interface for selecting values within a range</small>
+                            </div>
+                            
+                            <!-- Date input - shows date picker -->
+                            <div class="form-field">
+                                <label for="demo-date">Date Input:</label>
+                                <input type="date" id="demo-date" name="demo-date">
+                                <small class="help-text">Date picker interface, validates date format</small>
+                            </div>
+                            
+                            <!-- Time input - shows time picker -->
+                            <div class="form-field">
+                                <label for="demo-time">Time Input:</label>
+                                <input type="time" id="demo-time" name="demo-time">
+                                <small class="help-text">Time picker interface for selecting hours and minutes</small>
+                            </div>
+                            
+                            <!-- DateTime-local combines date and time -->
+                            <div class="form-field">
+                                <label for="demo-datetime">DateTime-Local Input:</label>
+                                <input type="datetime-local" id="demo-datetime" name="demo-datetime">
+                                <small class="help-text">Combined date and time picker</small>
+                            </div>
+                        </div>
+                        
+                        <!-- Selection and file inputs group -->
+                        <div class="input-group">
+                            <h4>Selection & File Inputs</h4>
+                            
+                            <!-- File input - allows file uploads -->
+                            <div class="form-field">
+                                <label for="demo-file">File Input:</label>
+                                <input type="file" id="demo-file" name="demo-file" accept="image/*">
+                                <small class="help-text">File upload with optional accept attribute for file filtering</small>
+                            </div>
+                            
+                            <!-- Color input - shows color picker -->
+                            <div class="form-field">
+                                <label for="demo-color">Color Input:</label>
+                                <input type="color" id="demo-color" name="demo-color" value="#bb86fc">
+                                <small class="help-text">Color picker interface for selecting colors</small>
+                            </div>
+                            
+                            <!-- Checkbox inputs for multiple selections -->
+                            <div class="form-field">
+                                <fieldset>
+                                    <legend>Checkbox Inputs (Multiple Selection):</legend>
+                                    <div class="checkbox-group">
+                                        <label>
+                                            <input type="checkbox" id="demo-check1" name="demo-checkboxes" value="option1">
+                                            Option 1
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" id="demo-check2" name="demo-checkboxes" value="option2">
+                                            Option 2
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" id="demo-check3" name="demo-checkboxes" value="option3">
+                                            Option 3
+                                        </label>
+                                    </div>
+                                </fieldset>
+                                <small class="help-text">Allow multiple selections from a group of options</small>
+                            </div>
+                            
+                            <!-- Radio buttons for single selection -->
+                            <div class="form-field">
+                                <fieldset>
+                                    <legend>Radio Inputs (Single Selection):</legend>
+                                    <div class="radio-group">
+                                        <label>
+                                            <input type="radio" id="demo-radio1" name="demo-radios" value="choice1">
+                                            Choice A
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="demo-radio2" name="demo-radios" value="choice2">
+                                            Choice B
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="demo-radio3" name="demo-radios" value="choice3">
+                                            Choice C
+                                        </label>
+                                    </div>
+                                </fieldset>
+                                <small class="help-text">Allow only one selection from a group of options</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Form submission buttons -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Submit Form</button>
+                        <button type="reset" class="btn-secondary">Reset Form</button>
+                    </div>
+                </form>
+            </article>
+
+            <!-- Code example showing input type syntax -->
+            <article class="code-example">
+                <h3>Input Type Code Examples</h3>
+                <p>Here's how to implement various input types with proper labeling and attributes:</p>
+                <pre><code>&lt;!-- Text input with label and placeholder --&gt;
+&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username" placeholder="Enter username" required&gt;
+
+&lt;!-- Email input with validation --&gt;
+&lt;label for="email"&gt;Email Address:&lt;/label&gt;
+&lt;input type="email" id="email" name="email" placeholder="user@example.com" required&gt;
+
+&lt;!-- Number input with min/max constraints --&gt;
+&lt;label for="age"&gt;Age:&lt;/label&gt;
+&lt;input type="number" id="age" name="age" min="18" max="120" required&gt;
+
+&lt;!-- Date input --&gt;
+&lt;label for="birthdate"&gt;Birth Date:&lt;/label&gt;
+&lt;input type="date" id="birthdate" name="birthdate"&gt;
+
+&lt;!-- File input with accept attribute --&gt;
+&lt;label for="profile-photo"&gt;Profile Photo:&lt;/label&gt;
+&lt;input type="file" id="profile-photo" name="profile-photo" accept="image/*"&gt;</code></pre>
+            </article>
+        </section>
+
+        <!-- Tables Section - demonstrates proper table structure -->
+        <section id="tables" class="content-section">
+            <h2>HTML Table Structure</h2>
+            <p>Tables should be used for tabular data only, not for layout. Proper table structure includes semantic elements for accessibility and styling.</p>
+            
+            <!-- Table structure explanation -->
+            <article class="demo-container">
+                <h3>Complete Table Example</h3>
+                <p>This table demonstrates all essential table elements with proper semantic structure:</p>
+                
+                <!-- Well-structured data table with caption, header, body, and footer -->
+                <table class="demo-table">
+                    <!-- Caption describes the table content for screen readers -->
+                    <caption>Student Academic Performance Report - Fall 2025</caption>
+                    
+                    <!-- Table header contains column headings -->
+                    <thead>
+                        <tr>
+                            <!-- th elements define column headers with scope attribute for accessibility -->
+                            <th scope="col">Student ID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Major</th>
+                            <th scope="col">GPA</th>
+                            <th scope="col">Credits</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    
+                    <!-- Table body contains the actual data rows -->
+                    <tbody>
+                        <!-- Each tr represents a data record -->
+                        <tr>
+                            <!-- First cell could be a row header with scope="row" if it identifies the row -->
+                            <td>ST001</td>
+                            <td>Alice Johnson</td>
+                            <td>Computer Science</td>
+                            <td>3.85</td>
+                            <td>124</td>
+                            <td class="status-good">Excellent</td>
+                        </tr>
+                        <tr>
+                            <td>ST002</td>
+                            <td>Bob Martinez</td>
+                            <td>Data Science</td>
+                            <td>3.42</td>
+                            <td>98</td>
+                            <td class="status-good">Good</td>
+                        </tr>
+                        <tr>
+                            <td>ST003</td>
+                            <td>Carol Chen</td>
+                            <td>Web Development</td>
+                            <td>3.91</td>
+                            <td>115</td>
+                            <td class="status-excellent">Outstanding</td>
+                        </tr>
+                        <tr>
+                            <td>ST004</td>
+                            <td>David Wilson</td>
+                            <td>Cybersecurity</td>
+                            <td>3.67</td>
+                            <td>102</td>
+                            <td class="status-good">Good</td>
+                        </tr>
+                        <tr>
+                            <td>ST005</td>
+                            <td>Emma Davis</td>
+                            <td>Computer Science</td>
+                            <td>2.95</td>
+                            <td>89</td>
+                            <td class="status-warning">Needs Improvement</td>
+                        </tr>
+                    </tbody>
+                    
+                    <!-- Table footer contains summary information -->
+                    <tfoot>
+                        <tr>
+                            <!-- Colspan spans multiple columns for summary data -->
+                            <td colspan="3"><strong>Summary Statistics</strong></td>
+                            <td><strong>3.56</strong></td>
+                            <td><strong>506</strong></td>
+                            <td><strong>5 Students</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                
+                <!-- Table explanation -->
+                <div class="table-explanation">
+                    <h4>Table Structure Breakdown:</h4>
+                    <ul>
+                        <li><strong>&lt;caption&gt;</strong> - Describes the table content for screen readers</li>
+                        <li><strong>&lt;thead&gt;</strong> - Contains header rows with column titles</li>
+                        <li><strong>&lt;tbody&gt;</strong> - Contains the main data rows</li>
+                        <li><strong>&lt;tfoot&gt;</strong> - Contains footer/summary information</li>
+                        <li><strong>&lt;th&gt;</strong> - Header cells with scope attributes for accessibility</li>
+                        <li><strong>&lt;td&gt;</strong> - Data cells containing the actual information</li>
+                        <li><strong>scope="col"</strong> - Indicates header applies to column</li>
+                        <li><strong>scope="row"</strong> - Indicates header applies to row</li>
+                        <li><strong>colspan</strong> - Spans multiple columns for summary data</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Complex table example -->
+            <article class="demo-container">
+                <h3>Complex Table with Row and Column Headers</h3>
+                <p>This example shows a more complex table structure with both row and column headers:</p>
+                
+                <!-- Course schedule table with complex header structure -->
+                <table class="schedule-table">
+                    <caption>Weekly Class Schedule - Computer Science Department</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Monday</th>
+                            <th scope="col">Tuesday</th>
+                            <th scope="col">Wednesday</th>
+                            <th scope="col">Thursday</th>
+                            <th scope="col">Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Each row has a time header and class information -->
+                        <tr>
+                            <th scope="row">9:00 AM</th>
+                            <td>CS 101 - Intro Programming</td>
+                            <td>CS 201 - Data Structures</td>
+                            <td>CS 101 - Intro Programming</td>
+                            <td>CS 301 - Algorithms</td>
+                            <td>CS 401 - Senior Project</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">11:00 AM</th>
+                            <td>CS 202 - Web Development</td>
+                            <td>CS 301 - Algorithms</td>
+                            <td>CS 202 - Web Development</td>
+                            <td>CS 201 - Data Structures</td>
+                            <td>CS 350 - Database Design</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1:00 PM</th>
+                            <td>CS 350 - Database Design</td>
+                            <td>CS 401 - Senior Project</td>
+                            <td>Lab Time</td>
+                            <td>CS 350 - Database Design</td>
+                            <td>CS 301 - Algorithms</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3:00 PM</th>
+                            <td>Lab Time</td>
+                            <td>CS 202 - Web Development</td>
+                            <td>CS 401 - Senior Project</td>
+                            <td>Lab Time</td>
+                            <td>CS 201 - Data Structures</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <!-- Table code example -->
+            <article class="code-example">
+                <h3>Table Structure Code Example</h3>
+                <p>Here's the proper way to structure an accessible data table:</p>
+                <pre><code>&lt;table&gt;
+    &lt;!-- Caption describes table content --&gt;
+    &lt;caption&gt;Student Grade Report&lt;/caption&gt;
+    
+    &lt;!-- Header section with column titles --&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Student Name&lt;/th&gt;
+            &lt;th scope="col"&gt;Subject&lt;/th&gt;
+            &lt;th scope="col"&gt;Grade&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    
+    &lt;!-- Body section with data rows --&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Alice Johnson&lt;/td&gt;
+            &lt;td&gt;Mathematics&lt;/td&gt;
+            &lt;td&gt;A&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bob Smith&lt;/td&gt;
+            &lt;td&gt;Science&lt;/td&gt;
+            &lt;td&gt;B+&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    
+    &lt;!-- Footer section with summary data --&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2"&gt;Average Grade&lt;/td&gt;
+            &lt;td&gt;A-&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+            </article>
+        </section>
+
+        <!-- ID Attributes Section - explains the importance of IDs -->
+        <section id="id-attributes" class="content-section">
+            <h2>ID Attributes and Element Identification</h2>
+            <p>ID attributes provide unique identifiers for HTML elements, enabling JavaScript functionality, CSS targeting, and accessibility features.</p>
+            
+            <!-- ID usage examples -->
+            <article class="demo-container">
+                <h3>Why ID Attributes Matter</h3>
+                <div class="id-benefits">
+                    <!-- Each benefit shows a practical use case -->
+                    <div class="benefit-item">
+                        <h4>🎯 CSS Targeting</h4>
+                        <p>IDs allow specific styling of individual elements using CSS selectors like <code>#elementId</code></p>
+                        <div class="example-demo">
+                            <!-- Element with ID for CSS targeting -->
+                            <div id="special-box" class="demo-box">
+                                This box has ID "special-box" and unique styling
+                            </div>
+                            <small>CSS: <code>#special-box { background: purple; }</code></small>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <h4>🔗 Page Navigation</h4>
+                        <p>IDs create anchor points for internal page links and URL fragments</p>
+                        <div class="example-demo">
+                            <!-- Navigation links that use IDs as anchors -->
+                            <nav class="demo-nav">
+                                <a href="#introduction">Go to Introduction</a> |
+                                <a href="#input-types">Go to Input Types</a> |
+                                <a href="#tables">Go to Tables</a>
+                            </nav>
+                            <small>Links use <code>href="#sectionId"</code> to navigate to sections</small>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <h4>⚡ JavaScript Interaction</h4>
+                        <p>JavaScript can find and manipulate elements using <code>document.getElementById()</code></p>
+                        <div class="example-demo">
+                            <!-- Interactive element with ID for JavaScript -->
+                            <button id="demo-button" onclick="changeText()">Click me!</button>
+                            <p id="demo-text">Original text</p>
+                            <small>JavaScript: <code>document.getElementById('demo-text').textContent = 'New text';</code></small>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <h4>♿ Form Accessibility</h4>
+                        <p>Labels connect to form elements using the <code>for</code> attribute pointing to input IDs</p>
+                        <div class="example-demo">
+                            <!-- Accessible form field with proper label-input connection -->
+                            <label for="accessible-input">Username (click this label):</label>
+                            <input type="text" id="accessible-input" name="username" placeholder="Enter username">
+                            <small>Label's <code>for="accessible-input"</code> connects to input's <code>id="accessible-input"</code></small>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ID best practices -->
+            <article class="demo-container">
+                <h3>ID Attribute Best Practices</h3>
+                <div class="best-practices-grid">
+                    <div class="practice-card practice-do">
+                        <h4>✅ DO</h4>
+                        <ul>
+                            <li>Use unique IDs - each ID should appear only once per page</li>
+                            <li>Use descriptive names: <code>id="main-navigation"</code></li>
+                            <li>Use kebab-case: <code>id="user-profile-form"</code></li>
+                            <li>Start with a letter: <code>id="section-1"</code></li>
+                            <li>Connect labels to inputs: <code>&lt;label for="email"&gt;</code></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="practice-card practice-dont">
+                        <h4>❌ DON'T</h4>
+                        <ul>
+                            <li>Duplicate IDs - breaks JavaScript and accessibility</li>
+                            <li>Use spaces: <code>id="user name"</code> ❌</li>
+                            <li>Start with numbers: <code>id="1st-section"</code> ❌</li>
+                            <li>Use special characters: <code>id="user@email"</code> ❌</li>
+                            <li>Use generic names: <code>id="div1"</code> ❌</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ID code examples -->
+            <article class="code-example">
+                <h3>ID Attribute Code Examples</h3>
+                <p>Here are proper examples of using ID attributes in different contexts:</p>
+                <pre><code>&lt;!-- Page navigation anchor --&gt;
+&lt;nav id="main-navigation"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#about-section"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#contact-form"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Section with ID for navigation target --&gt;
+&lt;section id="about-section"&gt;
+    &lt;h2&gt;About Us&lt;/h2&gt;
+    &lt;p&gt;Section content...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;!-- Form with proper label-input connections --&gt;
+&lt;form id="contact-form"&gt;
+    &lt;div&gt;
+        &lt;label for="user-name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="user-name" name="name" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label for="user-email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="user-email" name="email" required&gt;
+    &lt;/div&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;!-- Element for JavaScript interaction --&gt;
+&lt;div id="dynamic-content"&gt;
+    Content that will be updated by JavaScript
+&lt;/div&gt;
+
+&lt;script&gt;
+// JavaScript can target elements by ID
+document.getElementById('dynamic-content').innerHTML = 'Updated content!';
+&lt;/script&gt;</code></pre>
+            </article>
+        </section>
+
+        <!-- Field Types and Structure Section -->
+        <section id="field-structure" class="content-section">
+            <h2>Form Field Structure and Organization</h2>
+            <p>Proper form field organization improves usability, accessibility, and data collection efficiency.</p>
+            
+            <!-- Field grouping demonstration -->
+            <article class="demo-container">
+                <h3>Form Field Grouping and Structure</h3>
+                <p>Related fields should be grouped logically using fieldsets and legends for better organization:</p>
+                
+                <!-- Comprehensive form demonstrating field organization -->
+                <form class="structured-form">
+                    <!-- Personal information fieldset -->
+                    <fieldset id="personal-info">
+                        <!-- Legend describes the group purpose -->
+                        <legend>Personal Information</legend>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="first-name">First Name:</label>
+                                <input type="text" id="first-name" name="firstName" required>
+                                <!-- Help text provides guidance -->
+                                <small class="help-text">Enter your legal first name</small>
+                            </div>
+                            <div class="field-group">
+                                <label for="last-name">Last Name:</label>
+                                <input type="text" id="last-name" name="lastName" required>
+                                <small class="help-text">Enter your legal last name</small>
+                            </div>
+                        </div>
+                        
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="birth-date">Date of Birth:</label>
+                                <input type="date" id="birth-date" name="birthDate" required>
+                                <small class="help-text">Used for age verification</small>
+                            </div>
+                            <div class="field-group">
+                                <label for="phone-number">Phone Number:</label>
+                                <input type="tel" id="phone-number" name="phoneNumber">
+                                <small class="help-text">Include area code (optional)</small>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <!-- Contact information fieldset -->
+                    <fieldset id="contact-info">
+                        <legend>Contact Information</legend>
+                        <div class="field-group">
+                            <label for="email-address">Email Address:</label>
+                            <input type="email" id="email-address" name="emailAddress" required>
+                            <small class="help-text">Primary email for account notifications</small>
+                        </div>
+                        
+                        <div class="field-group">
+                            <label for="street-address">Street Address:</label>
+                            <input type="text" id="street-address" name="streetAddress">
+                            <small class="help-text">Number and street name</small>
+                        </div>
+                        
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="city-name">City:</label>
+                                <input type="text" id="city-name" name="cityName">
+                            </div>
+                            <div class="field-group">
+                                <label for="state-province">State/Province:</label>
+                                <select id="state-province" name="stateProvince">
+                                    <option value="">Select State</option>
+                                    <option value="CA">California</option>
+                                    <option value="NY">New York</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="FL">Florida</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="postal-code">Postal Code:</label>
+                                <input type="text" id="postal-code" name="postalCode" pattern="[0-9]{5}(-[0-9]{4})?">
+                                <small class="help-text">5-digit ZIP code</small>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <!-- Preferences fieldset -->
+                    <fieldset id="preferences">
+                        <legend>Preferences and Settings</legend>
+                        
+                        <!-- Multiple choice options using radio buttons -->
+                        <div class="field-group">
+                            <fieldset class="radio-fieldset">
+                                <legend>Preferred Contact Method:</legend>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" id="contact-email" name="contactMethod" value="email" checked>
+                                        Email
+                                    </label>
+                                    <label>
+                                        <input type="radio" id="contact-phone" name="contactMethod" value="phone">
+                                        Phone
+                                    </label>
+                                    <label>
+                                        <input type="radio" id="contact-mail" name="contactMethod" value="mail">
+                                        Postal Mail
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        
+                        <!-- Multiple selections using checkboxes -->
+                        <div class="field-group">
+                            <fieldset class="checkbox-fieldset">
+                                <legend>Newsletter Subscriptions:</legend>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" id="news-weekly" name="newsletters" value="weekly">
+                                        Weekly Newsletter
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="news-monthly" name="newsletters" value="monthly">
+                                        Monthly Updates
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="news-special" name="newsletters" value="special">
+                                        Special Offers
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        
+                        <!-- Large text input for comments -->
+                        <div class="field-group">
+                            <label for="additional-comments">Additional Comments:</label>
+                            <textarea id="additional-comments" name="comments" rows="4" placeholder="Any additional information or special requests..."></textarea>
+                            <small class="help-text">Optional: Share any additional information</small>
+                        </div>
+                    </fieldset>
+                    
+                    <!-- Form submission area -->
+                    <div class="form-submission">
+                        <div class="field-group">
+                            <label>
+                                <input type="checkbox" id="terms-agreement" name="agreeToTerms" required>
+                                I agree to the <a href="#terms" target="_blank">Terms of Service</a> and <a href="#privacy" target="_blank">Privacy Policy</a>
+                            </label>
+                        </div>
+                        
+                        <div class="button-group">
+                            <button type="submit" class="btn-primary">Submit Application</button>
+                            <button type="reset" class="btn-secondary">Clear Form</button>
+                            <button type="button" class="btn-tertiary">Save Draft</button>
+                        </div>
+                    </div>
+                </form>
+            </article>
+
+            <!-- Field structure code example -->
+            <article class="code-example">
+                <h3>Form Field Structure Code Example</h3>
+                <p>Here's how to properly structure and group form fields:</p>
+                <pre><code>&lt;form&gt;
+    &lt;!-- Group related fields with fieldset --&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Personal Information&lt;/legend&gt;
+        
+        &lt;!-- Each field in a container for styling --&gt;
+        &lt;div class="field-group"&gt;
+            &lt;label for="user-name"&gt;Full Name:&lt;/label&gt;
+            &lt;input type="text" id="user-name" name="fullName" required&gt;
+            &lt;small class="help-text"&gt;Enter your complete legal name&lt;/small&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="field-group"&gt;
+            &lt;label for="user-email"&gt;Email:&lt;/label&gt;
+            &lt;input type="email" id="user-email" name="email" required&gt;
+            &lt;small class="help-text"&gt;We'll never share your email&lt;/small&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;!-- Radio button group --&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Preferred Contact Method:&lt;/legend&gt;
+        &lt;label&gt;
+            &lt;input type="radio" name="contact" value="email"&gt;
+            Email
+        &lt;/label&gt;
+        &lt;label&gt;
+            &lt;input type="radio" name="contact" value="phone"&gt;
+            Phone
+        &lt;/label&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            </article>
+        </section>
+
+        <!-- Summary section -->
+        <section id="summary" class="content-section">
+            <h2>Summary</h2>
+            <p>Understanding HTML fundamentals - input types, table structure, ID attributes, and form field organization - is essential for creating accessible, functional, and user-friendly web applications.</p>
+            
+            <!-- Key takeaways -->
+            <article class="summary-grid">
+                <div class="summary-card">
+                    <h3>Input Types</h3>
+                    <p>Use appropriate input types for better validation, mobile experience, and user interface. Each type serves a specific purpose and provides built-in functionality.</p>
+                </div>
+                
+                <div class="summary-card">
+                    <h3>Table Structure</h3>
+                    <p>Proper table markup with caption, thead, tbody, tfoot, and scope attributes ensures accessibility and semantic meaning for tabular data.</p>
+                </div>
+                
+                <div class="summary-card">
+                    <h3>ID Attributes</h3>
+                    <p>Unique IDs enable CSS targeting, JavaScript functionality, form accessibility, and page navigation. Use descriptive, unique identifiers.</p>
+                </div>
+                
+                <div class="summary-card">
+                    <h3>Field Organization</h3>
+                    <p>Group related fields with fieldsets and legends, provide help text, and structure forms logically for better usability and accessibility.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer provides site-wide information -->
+    <footer>
+        <p>&copy; 2025 HTML Learning Resource. Created for educational purposes to demonstrate HTML fundamentals and best practices.</p>
+    </footer>
+
+    <!-- JavaScript for interactive demonstrations -->
+    <script>
+        // Function to demonstrate JavaScript interaction with IDs
+        function changeText() {
+            // Get element by ID and change its content
+            const textElement = document.getElementById('demo-text');
+            if (textElement.textContent === 'Original text') {
+                textElement.textContent = 'Text changed by JavaScript!';
+                textElement.style.color = '#bb86fc';
+            } else {
+                textElement.textContent = 'Original text';
+                textElement.style.color = '';
+            }
+        }
+        
+        // Add form submission handler to prevent actual submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Form submission prevented for demo purposes!');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

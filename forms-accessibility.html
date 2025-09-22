@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for accessibility and SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to HTML forms and web accessibility with ARIA attributes and best practices">
+    <title>Forms & Accessibility Guide</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="forms-accessibility.css">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header>
+        <h1>Forms & Accessibility</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="semantic-elements.html">Semantic HTML</a></li>
+                <li><a href="css-layouts.html">CSS Layouts</a></li>
+                <li><a href="forms-accessibility.html" class="current">Forms & Accessibility</a></li>
+                <li><a href="css-showcase.html">CSS Showcase</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Introduction -->
+        <section id="introduction">
+            <h2>Forms & Web Accessibility</h2>
+            <p>Creating accessible forms is crucial for inclusive web design. This page demonstrates advanced form techniques, ARIA attributes, and accessibility best practices with detailed examples and explanations.</p>
+            
+            <!-- Accessibility overview -->
+            <article class="accessibility-overview">
+                <h3>Why Accessibility Matters</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>🌍 1 in 4</h4>
+                        <p>Adults in the US have a disability that impacts major life activities</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>👁️ Visual</h4>
+                        <p>Blindness, low vision, color blindness affect millions of users</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>🦻 Auditory</h4>
+                        <p>Hearing impairments require visual alternatives to audio content</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>🤚 Motor</h4>
+                        <p>Limited dexterity affects how users interact with forms and controls</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Basic Accessible Form -->
+        <section id="basic-accessible-form" class="form-section">
+            <h2>Basic Accessible Form Elements</h2>
+            <p>Every form element should have proper labels, clear instructions, and be keyboard accessible.</p>
+
+            <article class="form-example">
+                <h3>Proper Label Association</h3>
+                <p>Labels must be explicitly associated with form controls for screen reader users.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <form class="accessible-form">
+                        <!-- Text input with explicit label -->
+                        <div class="form-group">
+                            <label for="user-name">Full Name (Required)</label>
+                            <input type="text" id="user-name" name="userName" required 
+                                   aria-describedby="name-help" placeholder="Enter your full name">
+                            <small id="name-help" class="help-text">Enter your first and last name</small>
+                        </div>
+
+                        <!-- Email with validation feedback -->
+                        <div class="form-group">
+                            <label for="user-email">Email Address (Required)</label>
+                            <input type="email" id="user-email" name="userEmail" required 
+                                   aria-describedby="email-help email-error" placeholder="user@example.com">
+                            <small id="email-help" class="help-text">We'll never share your email with anyone</small>
+                            <div id="email-error" class="error-message" aria-live="polite"></div>
+                        </div>
+
+                        <!-- Phone with input pattern -->
+                        <div class="form-group">
+                            <label for="user-phone">Phone Number</label>
+                            <input type="tel" id="user-phone" name="userPhone" 
+                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                                   aria-describedby="phone-help" 
+                                   placeholder="123-456-7890">
+                            <small id="phone-help" class="help-text">Format: 123-456-7890</small>
+                        </div>
+
+                        <!-- Password with strength indicator -->
+                        <div class="form-group">
+                            <label for="user-password">Password (Required)</label>
+                            <input type="password" id="user-password" name="userPassword" required 
+                                   aria-describedby="password-help password-strength" 
+                                   minlength="8">
+                            <small id="password-help" class="help-text">Must be at least 8 characters long</small>
+                            <div id="password-strength" class="password-strength" aria-live="polite">
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <span class="strength-text">Password strength: <span id="strength-level">Not entered</span></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="code-example">
+                    <h4>HTML:</h4>
+                    <pre><code>&lt;!-- Proper label association with for/id attributes --&gt;
+&lt;div class="form-group"&gt;
+    &lt;label for="user-name"&gt;Full Name (Required)&lt;/label&gt;
+    &lt;input type="text" id="user-name" name="userName" required 
+           aria-describedby="name-help" placeholder="Enter your full name"&gt;
+    &lt;small id="name-help" class="help-text"&gt;Enter your first and last name&lt;/small&gt;
+&lt;/div&gt;
+
+&lt;!-- Email with error handling --&gt;
+&lt;div class="form-group"&gt;
+    &lt;label for="user-email"&gt;Email Address (Required)&lt;/label&gt;
+    &lt;input type="email" id="user-email" name="userEmail" required 
+           aria-describedby="email-help email-error"&gt;
+    &lt;small id="email-help" class="help-text"&gt;We'll never share your email&lt;/small&gt;
+    &lt;div id="email-error" class="error-message" aria-live="polite"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h4>Key Accessibility Features:</h4>
+                    <ul class="feature-list">
+                        <li><strong>Explicit Labels:</strong> Every input has a proper label with <code>for</code> attribute</li>
+                        <li><strong>Required Fields:</strong> Marked with both <code>required</code> attribute and visual indicators</li>
+                        <li><strong>Help Text:</strong> Additional instructions linked with <code>aria-describedby</code></li>
+                        <li><strong>Error Messages:</strong> Live regions that announce errors to screen readers</li>
+                        <li><strong>Input Validation:</strong> Built-in HTML5 validation with custom patterns</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- ARIA Attributes Section -->
+        <section id="aria-attributes" class="form-section">
+            <h2>ARIA Attributes for Enhanced Accessibility</h2>
+            <p>ARIA (Accessible Rich Internet Applications) attributes provide additional semantic information to assistive technologies.</p>
+
+            <article class="form-example">
+                <h3>ARIA Live Regions and States</h3>
+                <p>ARIA attributes help communicate dynamic changes and complex interactions to screen readers.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <form class="aria-form">
+                        <!-- Search with live results -->
+                        <div class="form-group">
+                            <label for="search-input">Search Users</label>
+                            <input type="search" id="search-input" name="search" 
+                                   aria-describedby="search-help" 
+                                   aria-expanded="false" 
+                                   aria-haspopup="listbox" 
+                                   aria-autocomplete="list"
+                                   placeholder="Type to search...">
+                            <small id="search-help" class="help-text">Start typing to see suggestions</small>
+                            
+                            <!-- Search results dropdown -->
+                            <ul id="search-results" class="search-results" role="listbox" aria-live="polite">
+                                <!-- Results will be populated dynamically -->
+                            </ul>
+                        </div>
+
+                        <!-- Progress indicator -->
+                        <div class="form-group">
+                            <label for="file-upload">Upload Document</label>
+                            <input type="file" id="file-upload" name="document" 
+                                   aria-describedby="upload-help" 
+                                   accept=".pdf,.doc,.docx">
+                            <small id="upload-help" class="help-text">Accepted formats: PDF, DOC, DOCX</small>
+                            
+                            <!-- Progress bar -->
+                            <div class="progress-container" style="display: none;">
+                                <div class="progress-bar" role="progressbar" 
+                                     aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+                                     aria-describedby="progress-text">
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <div id="progress-text" aria-live="polite">Upload progress: 0%</div>
+                            </div>
+                        </div>
+
+                        <!-- Multi-step form -->
+                        <fieldset class="form-step" aria-labelledby="step-1-legend">
+                            <legend id="step-1-legend">Step 1 of 3: Personal Information</legend>
+                            
+                            <div class="step-progress" role="progressbar" 
+                                 aria-valuemin="1" aria-valuemax="3" aria-valuenow="1"
+                                 aria-describedby="step-description">
+                                <div class="step-indicator">
+                                    <span class="step current" aria-current="step">1</span>
+                                    <span class="step">2</span>
+                                    <span class="step">3</span>
+                                </div>
+                            </div>
+                            <div id="step-description" class="sr-only">Step 1 of 3: Personal Information</div>
+
+                            <div class="form-group">
+                                <label for="step-name">Name</label>
+                                <input type="text" id="step-name" name="stepName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="step-age">Age</label>
+                                <input type="number" id="step-age" name="stepAge" min="18" max="120" 
+                                       aria-describedby="age-error">
+                                <div id="age-error" class="error-message" aria-live="assertive"></div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Toggle section -->
+                        <div class="form-group">
+                            <button type="button" class="toggle-button" 
+                                    aria-expanded="false" 
+                                    aria-controls="advanced-options"
+                                    onclick="toggleAdvancedOptions()">
+                                <span>Advanced Options</span>
+                                <span class="toggle-icon" aria-hidden="true">▼</span>
+                            </button>
+                            
+                            <div id="advanced-options" class="collapsible-content" hidden>
+                                <div class="form-group">
+                                    <label for="notifications">Email Notifications</label>
+                                    <select id="notifications" name="notifications" 
+                                            aria-describedby="notify-help">
+                                        <option value="all">All notifications</option>
+                                        <option value="important">Important only</option>
+                                        <option value="none">None</option>
+                                    </select>
+                                    <small id="notify-help" class="help-text">Choose your notification preference</small>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="code-example">
+                    <h4>ARIA Attributes Used:</h4>
+                    <pre><code>&lt;!-- Live regions for dynamic content --&gt;
+&lt;div aria-live="polite"&gt;Status updates&lt;/div&gt;
+&lt;div aria-live="assertive"&gt;Error messages&lt;/div&gt;
+
+&lt;!-- Expandable content --&gt;
+&lt;button aria-expanded="false" aria-controls="content"&gt;Toggle&lt;/button&gt;
+&lt;div id="content" hidden&gt;Collapsible content&lt;/div&gt;
+
+&lt;!-- Progress indicators --&gt;
+&lt;div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"&gt;
+    Progress: 50%
+&lt;/div&gt;
+
+&lt;!-- Complex widgets --&gt;
+&lt;input aria-haspopup="listbox" aria-autocomplete="list" aria-expanded="false"&gt;
+&lt;ul role="listbox"&gt;Search results&lt;/ul&gt;</code></pre>
+
+                    <h4>ARIA Best Practices:</h4>
+                    <ul class="feature-list">
+                        <li><strong>aria-live:</strong> Announces dynamic content changes ("polite" or "assertive")</li>
+                        <li><strong>aria-expanded:</strong> Indicates if collapsible content is open or closed</li>
+                        <li><strong>aria-controls:</strong> References the element being controlled</li>
+                        <li><strong>aria-describedby:</strong> Links to descriptive text</li>
+                        <li><strong>role:</strong> Defines the element's purpose (progressbar, listbox, etc.)</li>
+                        <li><strong>aria-current:</strong> Indicates the current item in a set</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- Complex Form Patterns -->
+        <section id="complex-patterns" class="form-section">
+            <h2>Complex Form Patterns</h2>
+            <p>Advanced form patterns that require careful accessibility consideration and implementation.</p>
+
+            <!-- Custom Select Component -->
+            <article class="form-example">
+                <h3>Custom Select Component</h3>
+                <p>A fully accessible custom select dropdown with keyboard navigation and screen reader support.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <div class="form-group">
+                        <label for="custom-select">Choose Your Country</label>
+                        <div class="custom-select-container">
+                            <button type="button" id="custom-select" class="custom-select-button" 
+                                    aria-haspopup="listbox" aria-expanded="false" 
+                                    aria-describedby="select-help">
+                                <span class="select-value">Select a country...</span>
+                                <span class="select-arrow" aria-hidden="true">▼</span>
+                            </button>
+                            <ul class="custom-select-dropdown" role="listbox" aria-labelledby="custom-select" hidden>
+                                <li role="option" data-value="us">🇺🇸 United States</li>
+                                <li role="option" data-value="ca">🇨🇦 Canada</li>
+                                <li role="option" data-value="uk">🇬🇧 United Kingdom</li>
+                                <li role="option" data-value="de">🇩🇪 Germany</li>
+                                <li role="option" data-value="fr">🇫🇷 France</li>
+                                <li role="option" data-value="jp">🇯🇵 Japan</li>
+                            </ul>
+                        </div>
+                        <small id="select-help" class="help-text">Use arrow keys to navigate, Enter to select</small>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>HTML Structure:</h4>
+                    <pre><code>&lt;div class="custom-select-container"&gt;
+    &lt;button type="button" id="custom-select" class="custom-select-button" 
+            aria-haspopup="listbox" aria-expanded="false"&gt;
+        &lt;span class="select-value"&gt;Select a country...&lt;/span&gt;
+        &lt;span class="select-arrow" aria-hidden="true"&gt;▼&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="custom-select-dropdown" role="listbox" aria-labelledby="custom-select" hidden&gt;
+        &lt;li role="option" data-value="us"&gt;🇺🇸 United States&lt;/li&gt;
+        &lt;li role="option" data-value="ca"&gt;🇨🇦 Canada&lt;/li&gt;
+        &lt;!-- More options... --&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h4>JavaScript (Basic Implementation):</h4>
+                    <pre><code>// Handle keyboard navigation
+customSelect.addEventListener('keydown', (e) => {
+    switch(e.key) {
+        case 'ArrowDown':
+            e.preventDefault();
+            if (!isExpanded) openDropdown();
+            else moveToNextOption();
+            break;
+        case 'ArrowUp':
+            e.preventDefault();
+            if (isExpanded) moveToPrevOption();
+            break;
+        case 'Enter':
+        case ' ':
+            e.preventDefault();
+            if (isExpanded) selectCurrentOption();
+            else openDropdown();
+            break;
+        case 'Escape':
+            if (isExpanded) closeDropdown();
+            break;
+    }
+});</code></pre>
+                </div>
+            </article>
+
+            <!-- Date Picker Component -->
+            <article class="form-example">
+                <h3>Accessible Date Picker</h3>
+                <p>A date picker that works with keyboard navigation and screen readers.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <div class="form-group">
+                        <label for="date-picker">Select Date</label>
+                        <div class="date-picker-container">
+                            <input type="text" id="date-picker" class="date-input" 
+                                   aria-describedby="date-help" 
+                                   aria-expanded="false" 
+                                   aria-haspopup="dialog"
+                                   placeholder="MM/DD/YYYY" readonly>
+                            <button type="button" class="date-picker-button" 
+                                    aria-label="Open calendar">📅</button>
+                            
+                            <div class="date-picker-popup" role="dialog" 
+                                 aria-labelledby="calendar-title" hidden>
+                                <div class="calendar-header">
+                                    <button type="button" class="nav-button" aria-label="Previous month">‹</button>
+                                    <h3 id="calendar-title">September 2025</h3>
+                                    <button type="button" class="nav-button" aria-label="Next month">›</button>
+                                </div>
+                                <div class="calendar-grid" role="grid" aria-labelledby="calendar-title">
+                                    <div class="calendar-row" role="row">
+                                        <div class="calendar-cell day-header" role="columnheader">Sun</div>
+                                        <div class="calendar-cell day-header" role="columnheader">Mon</div>
+                                        <div class="calendar-cell day-header" role="columnheader">Tue</div>
+                                        <div class="calendar-cell day-header" role="columnheader">Wed</div>
+                                        <div class="calendar-cell day-header" role="columnheader">Thu</div>
+                                        <div class="calendar-cell day-header" role="columnheader">Fri</div>
+                                        <div class="calendar-cell day-header" role="columnheader">Sat</div>
+                                    </div>
+                                    <!-- Calendar days would be generated dynamically -->
+                                    <div class="calendar-row" role="row">
+                                        <div class="calendar-cell" role="gridcell"></div>
+                                        <div class="calendar-cell" role="gridcell"></div>
+                                        <div class="calendar-cell" role="gridcell"></div>
+                                        <div class="calendar-cell" role="gridcell"></div>
+                                        <div class="calendar-cell" role="gridcell"></div>
+                                        <div class="calendar-cell" role="gridcell">
+                                            <button type="button" class="date-button" tabindex="-1">1</button>
+                                        </div>
+                                        <div class="calendar-cell" role="gridcell">
+                                            <button type="button" class="date-button" tabindex="-1">2</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <small id="date-help" class="help-text">Use arrow keys to navigate calendar, Enter to select</small>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Form Validation -->
+        <section id="form-validation" class="form-section">
+            <h2>Accessible Form Validation</h2>
+            <p>Proper error handling and validation feedback is crucial for accessibility.</p>
+
+            <article class="form-example">
+                <h3>Real-time Validation with Accessibility</h3>
+                <p>This example shows how to implement real-time validation while maintaining accessibility.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <form class="validation-form" novalidate>
+                        <div class="form-group">
+                            <label for="username">Username (Required)</label>
+                            <input type="text" id="username" name="username" required 
+                                   minlength="3" maxlength="20" 
+                                   aria-describedby="username-help username-error"
+                                   pattern="[a-zA-Z0-9_]+"
+                                   data-validation="username">
+                            <small id="username-help" class="help-text">
+                                3-20 characters, letters, numbers, and underscores only
+                            </small>
+                            <div id="username-error" class="error-message" aria-live="polite"></div>
+                            <div class="validation-icon" aria-hidden="true"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" name="confirmPassword" 
+                                   aria-describedby="confirm-help confirm-error"
+                                   data-validation="confirm-password">
+                            <small id="confirm-help" class="help-text">Must match your password</small>
+                            <div id="confirm-error" class="error-message" aria-live="polite"></div>
+                            <div class="validation-icon" aria-hidden="true"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birth-year">Birth Year</label>
+                            <input type="number" id="birth-year" name="birthYear" 
+                                   min="1900" max="2010" 
+                                   aria-describedby="year-help year-error"
+                                   data-validation="birth-year">
+                            <small id="year-help" class="help-text">Must be between 1900 and 2010</small>
+                            <div id="year-error" class="error-message" aria-live="polite"></div>
+                            <div class="validation-icon" aria-hidden="true"></div>
+                        </div>
+
+                        <button type="submit" class="submit-button">Submit Form</button>
+                        
+                        <!-- Global form errors -->
+                        <div id="form-errors" class="global-errors" aria-live="assertive" role="alert"></div>
+                    </form>
+                </div>
+
+                <div class="code-example">
+                    <h4>Validation Best Practices:</h4>
+                    <ul class="feature-list">
+                        <li><strong>Real-time feedback:</strong> Validate as users type, but don't overwhelm them</li>
+                        <li><strong>Clear error messages:</strong> Specific, actionable instructions for fixing errors</li>
+                        <li><strong>Visual and programmatic:</strong> Use color, icons, AND text for error states</li>
+                        <li><strong>Live regions:</strong> Announce errors to screen readers using aria-live</li>
+                        <li><strong>Focus management:</strong> Move focus to first error field on submission</li>
+                        <li><strong>Consistent timing:</strong> Validate on blur, not on every keystroke</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- Accessibility Testing -->
+        <section id="testing" class="form-section">
+            <h2>Testing for Accessibility</h2>
+            <p>Learn how to test your forms for accessibility issues using various tools and techniques.</p>
+
+            <article class="testing-guide">
+                <h3>Accessibility Testing Checklist</h3>
+                
+                <div class="testing-grid">
+                    <div class="testing-category">
+                        <h4>🎯 Manual Testing</h4>
+                        <ul>
+                            <li>Navigate entire form using only keyboard</li>
+                            <li>Test with screen reader (NVDA, JAWS, VoiceOver)</li>
+                            <li>Verify focus indicators are visible</li>
+                            <li>Check color contrast ratios</li>
+                            <li>Test with browser zoom at 200%</li>
+                        </ul>
+                    </div>
+
+                    <div class="testing-category">
+                        <h4>🔧 Automated Tools</h4>
+                        <ul>
+                            <li>axe DevTools browser extension</li>
+                            <li>WAVE Web Accessibility Evaluator</li>
+                            <li>Lighthouse accessibility audit</li>
+                            <li>Pa11y command line tool</li>
+                            <li>Color contrast analyzers</li>
+                        </ul>
+                    </div>
+
+                    <div class="testing-category">
+                        <h4>👥 User Testing</h4>
+                        <ul>
+                            <li>Test with actual users with disabilities</li>
+                            <li>Observe usage patterns and pain points</li>
+                            <li>Collect feedback on form completion</li>
+                            <li>Test across different assistive technologies</li>
+                            <li>Iterate based on user feedback</li>
+                        </ul>
+                    </div>
+
+                    <div class="testing-category">
+                        <h4>📋 Code Review</h4>
+                        <ul>
+                            <li>Verify all form controls have labels</li>
+                            <li>Check ARIA attributes are correct</li>
+                            <li>Ensure logical tab order</li>
+                            <li>Review error handling implementation</li>
+                            <li>Validate HTML for semantic correctness</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Forms & Accessibility Guide. 
+        <a href="index.html">Back to Home</a> | 
+        <a href="#top">Back to Top</a></p>
+    </footer>
+
+    <!-- Basic JavaScript for interactive examples -->
+    <script>
+        // Toggle advanced options
+        function toggleAdvancedOptions() {
+            const button = document.querySelector('.toggle-button');
+            const content = document.getElementById('advanced-options');
+            const icon = button.querySelector('.toggle-icon');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            
+            button.setAttribute('aria-expanded', !isExpanded);
+            content.hidden = isExpanded;
+            icon.textContent = isExpanded ? '▼' : '▲';
+        }
+
+        // Custom select functionality (basic implementation)
+        document.addEventListener('DOMContentLoaded', function() {
+            const customSelect = document.getElementById('custom-select');
+            const dropdown = document.querySelector('.custom-select-dropdown');
+            const options = dropdown.querySelectorAll('[role="option"]');
+            let currentIndex = -1;
+
+            customSelect.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                dropdown.hidden = isExpanded;
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.custom-select-container')) {
+                    customSelect.setAttribute('aria-expanded', 'false');
+                    dropdown.hidden = true;
+                }
+            });
+
+            // Option selection
+            options.forEach((option, index) => {
+                option.addEventListener('click', function() {
+                    const value = this.textContent;
+                    customSelect.querySelector('.select-value').textContent = value;
+                    customSelect.setAttribute('aria-expanded', 'false');
+                    dropdown.hidden = true;
+                    customSelect.focus();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

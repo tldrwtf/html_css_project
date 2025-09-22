@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Example website demonstrating semantic HTML, tables, forms, and CSS styling">
+    <title>Semantic HTML & CSS Example</title>
+    <!-- Link to external CSS file (no inline CSS) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header section using semantic <header> tag for site banner -->
+    <header>
+        <h1>Welcome to My Semantic Website</h1>
+        <!-- Navigation using semantic <nav> tag -->
+        <nav>
+            <!-- Unordered list for navigation links -->
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="html-fundamentals.html">HTML Fundamentals</a></li>
+                <li><a href="semantic-elements.html">Semantic Elements</a></li>
+                <li><a href="css-layouts.html">CSS Layouts</a></li>
+                <li><a href="forms-accessibility.html">Forms & Accessibility</a></li>
+                <li><a href="css-showcase.html">CSS Showcase</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content area using semantic <main> tag -->
+    <main>
+        <!-- About section using semantic <section> tag -->
+        <section id="about">
+            <h2>About This Learning Resource</h2>
+            <p>This comprehensive web development learning resource demonstrates modern HTML5 and CSS3 techniques across multiple specialized pages:</p>
+            <ul>
+                <li><strong>HTML Fundamentals:</strong> Input types, table structure, form fields, and ID attributes</li>
+                <li><strong>Semantic HTML:</strong> Using proper HTML5 semantic elements for meaningful document structure</li>
+                <li><strong>CSS Layouts:</strong> Flexbox, Grid, and positioning techniques for responsive design</li>
+                <li><strong>Forms & Accessibility:</strong> Advanced form techniques and accessibility best practices</li>
+                <li><strong>CSS Showcase:</strong> Modern CSS features, animations, and advanced styling techniques</li>
+                <li><strong>External CSS:</strong> All styling handled through external stylesheets (no inline CSS)</li>
+                <li><strong>Code Comments:</strong> Comprehensive documentation explaining every section and technique</li>
+            </ul>
+        </section>
+
+        <!-- Navigation overview section -->
+        <section id="overview">
+            <h2>Page Overview</h2>
+            <p>Each page in this resource focuses on specific web development concepts with detailed examples and explanations:</p>
+            
+            <!-- Page description grid -->
+            <div class="page-grid">
+                <!-- HTML Fundamentals page description -->
+                <article class="page-card">
+                    <h3><a href="html-fundamentals.html">HTML Fundamentals</a></h3>
+                    <p>Explore essential HTML building blocks including:</p>
+                    <ul>
+                        <li>Various input types (text, email, date, number, etc.)</li>
+                        <li>Proper table structure with headers, body, and footer</li>
+                        <li>Form field organization and grouping</li>
+                        <li>ID attributes for targeting and accessibility</li>
+                        <li>Interactive examples and code demonstrations</li>
+                    </ul>
+                </article>
+
+                <!-- Semantic Elements page description -->
+                <article class="page-card">
+                    <h3><a href="semantic-elements.html">Semantic Elements</a></h3>
+                    <p>Learn HTML5 semantic elements for meaningful structure:</p>
+                    <ul>
+                        <li>Header, nav, main, section, article, aside, footer</li>
+                        <li>Proper document outline and hierarchy</li>
+                        <li>Accessibility benefits of semantic markup</li>
+                        <li>SEO advantages of structured content</li>
+                        <li>Live examples with detailed explanations</li>
+                    </ul>
+                </article>
+
+                <!-- CSS Layouts page description -->
+                <article class="page-card">
+                    <h3><a href="css-layouts.html">CSS Layouts</a></h3>
+                    <p>Master modern CSS layout techniques:</p>
+                    <ul>
+                        <li>Flexbox for one-dimensional layouts</li>
+                        <li>CSS Grid for two-dimensional layouts</li>
+                        <li>Positioning strategies (static, relative, absolute, fixed)</li>
+                        <li>Responsive design patterns</li>
+                        <li>Interactive layout demonstrations</li>
+                    </ul>
+                </article>
+
+                <!-- Forms & Accessibility page description -->
+                <article class="page-card">
+                    <h3><a href="forms-accessibility.html">Forms & Accessibility</a></h3>
+                    <p>Build accessible and user-friendly forms:</p>
+                    <ul>
+                        <li>ARIA attributes for enhanced accessibility</li>
+                        <li>Custom form components and validation</li>
+                        <li>Screen reader optimization techniques</li>
+                        <li>Advanced form patterns and interactions</li>
+                        <li>Accessibility testing and best practices</li>
+                    </ul>
+                </article>
+
+                <!-- CSS Showcase page description -->
+                <article class="page-card">
+                    <h3><a href="css-showcase.html">CSS Showcase</a></h3>
+                    <p>Explore advanced CSS styling and animations:</p>
+                    <ul>
+                        <li>CSS custom properties and theming</li>
+                        <li>Keyframe animations and transitions</li>
+                        <li>Modern CSS features (clip-path, backdrop-filter)</li>
+                        <li>Interactive hover effects and micro-interactions</li>
+                        <li>Performance optimization techniques</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Additional section demonstrating more semantic elements -->
+        <section>
+            <h2>Additional Semantic Elements</h2>
+            
+            <!-- Article element for standalone content -->
+            <article>
+                <h3>Understanding Semantic HTML</h3>
+                <p>Semantic HTML refers to using HTML markup to reinforce the meaning of web content rather than merely define its appearance.</p>
+                
+                <!-- Aside element for related but separate content -->
+                <aside>
+                    <h4>Quick Tip</h4>
+                    <p>Always use semantic elements when they're appropriate. This improves accessibility and SEO.</p>
+                </aside>
+            </article>
+
+            <!-- Details and summary for collapsible content -->
+            <details>
+                <summary>Click to learn more about web accessibility</summary>
+                <p>Web accessibility ensures that websites and applications are usable by people with disabilities. Proper semantic HTML is a crucial foundation for accessible web design.</p>
+            </details>
+        </section>
+    </main>
+
+    <!-- Footer section using semantic <footer> tag -->
+    <footer>
+        <p>&copy; 2025 Semantic HTML Example. All rights reserved.</p>
+    </footer>
+</body>
+</html>

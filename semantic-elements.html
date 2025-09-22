@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential meta tags for proper document structure -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to HTML5 semantic elements with examples and use cases">
+    <meta name="keywords" content="HTML5, semantic elements, web development, accessibility">
+    <title>HTML5 Semantic Elements Guide</title>
+    <!-- Link to shared stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Additional styles for this specific page -->
+    <link rel="stylesheet" href="semantic-elements.css">
+</head>
+<body>
+    <!-- Header with navigation - consistent across all pages -->
+    <header>
+        <h1>HTML5 Semantic Elements Guide</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="semantic-elements.html" class="current">Semantic HTML</a></li>
+                <li><a href="css-layouts.html">CSS Layouts</a></li>
+                <li><a href="forms-accessibility.html">Forms & Accessibility</a></li>
+                <li><a href="css-showcase.html">CSS Showcase</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content demonstrating semantic elements -->
+    <main>
+        <!-- Introduction section -->
+        <section id="introduction">
+            <h2>What are Semantic Elements?</h2>
+            <p>Semantic HTML elements clearly describe their meaning to both the browser and the developer. They provide structure and meaning to web content, improving accessibility, SEO, and maintainability.</p>
+            
+            <!-- Code example demonstrating semantic vs non-semantic markup -->
+            <article class="code-example">
+                <h3>Semantic vs Non-Semantic Example</h3>
+                <div class="comparison">
+                    <!-- Non-semantic approach -->
+                    <div class="example-section">
+                        <h4>❌ Non-Semantic (Avoid)</h4>
+                        <pre><code>&lt;div class="header"&gt;
+    &lt;div class="nav"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="main-content"&gt;
+    &lt;div class="article"&gt;...&lt;/div&gt;
+    &lt;div class="sidebar"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer"&gt;...&lt;/div&gt;</code></pre>
+                    </div>
+                    
+                    <!-- Semantic approach -->
+                    <div class="example-section">
+                        <h4>✅ Semantic (Recommended)</h4>
+                        <pre><code>&lt;header&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;article&gt;...&lt;/article&gt;
+    &lt;aside&gt;...&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Document Structure Elements -->
+        <section id="document-structure">
+            <h2>Document Structure Elements</h2>
+            
+            <!-- Header element explanation -->
+            <article class="semantic-element">
+                <h3>&lt;header&gt; Element</h3>
+                <p><strong>Purpose:</strong> Represents introductory content or navigational aids. Can contain logos, search forms, navigation menus.</p>
+                <p><strong>Use Cases:</strong> Site headers, article headers, section headers</p>
+                
+                <div class="example-demo">
+                    <h4>Live Example:</h4>
+                    <!-- Demonstration of header element -->
+                    <header class="demo-header">
+                        <h1>Company Name</h1>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                </div>
+                
+                <div class="code-snippet">
+                    <h4>HTML Code:</h4>
+                    <pre><code>&lt;!-- Header can be used for site-wide or section-specific headers --&gt;
+&lt;header&gt;
+    &lt;h1&gt;Company Name&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+                </div>
+            </article>
+
+            <!-- Navigation element explanation -->
+            <article class="semantic-element">
+                <h3>&lt;nav&gt; Element</h3>
+                <p><strong>Purpose:</strong> Defines a set of navigation links. Not all groups of links need to be in a nav element.</p>
+                <p><strong>Use Cases:</strong> Primary navigation, breadcrumbs, pagination, table of contents</p>
+                
+                <div class="example-demo">
+                    <h4>Live Examples:</h4>
+                    
+                    <!-- Primary navigation example -->
+                    <nav class="demo-nav primary">
+                        <h4>Primary Navigation:</h4>
+                        <ul>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <!-- Breadcrumb navigation example -->
+                    <nav class="demo-nav breadcrumb" aria-label="Breadcrumb">
+                        <h4>Breadcrumb Navigation:</h4>
+                        <ol>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Category</a></li>
+                            <li aria-current="page">Current Page</li>
+                        </ol>
+                    </nav>
+                </div>
+                
+                <div class="code-snippet">
+                    <h4>HTML Code:</h4>
+                    <pre><code>&lt;!-- Primary navigation --&gt;
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Support&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Breadcrumb navigation with ARIA label --&gt;
+&lt;nav aria-label="Breadcrumb"&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Category&lt;/a&gt;&lt;/li&gt;
+        &lt;li aria-current="page"&gt;Current Page&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+                </div>
+            </article>
+
+            <!-- Main element explanation -->
+            <article class="semantic-element">
+                <h3>&lt;main&gt; Element</h3>
+                <p><strong>Purpose:</strong> Represents the dominant content of the document. There should be only one main element per page.</p>
+                <p><strong>Use Cases:</strong> Primary content area, excluding headers, footers, and sidebars</p>
+                
+                <div class="code-snippet">
+                    <h4>HTML Code:</h4>
+                    <pre><code>&lt;!-- Main content should be unique to the document --&gt;
+&lt;main&gt;
+    &lt;h1&gt;Page Title&lt;/h1&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Section Heading&lt;/h2&gt;
+        &lt;p&gt;Main content goes here...&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- Content Sectioning Elements -->
+        <section id="content-sectioning">
+            <h2>Content Sectioning Elements</h2>
+            
+            <!-- Section element explanation -->
+            <article class="semantic-element">
+                <h3>&lt;section&gt; Element</h3>
+                <p><strong>Purpose:</strong> Represents a thematic grouping of content with a heading. Use when no other semantic element is appropriate.</p>
+                <p><strong>Use Cases:</strong> Chapters, tabs, themed content groups</p>
+                
+                <div class="example-demo">
+                    <h4>Live Example:</h4>
+                    <!-- Demonstration of section elements -->
+                    <section class="demo-section">
+                        <h4>Features Overview</h4>
+                        <p>This section groups related features together.</p>
+                        <ul>
+                            <li>Feature 1: Easy to use</li>
+                            <li>Feature 2: Fast performance</li>
+                            <li>Feature 3: Secure</li>
+                        </ul>
+                    </section>
+                </div>
+            </article>
+
+            <!-- Article element explanation -->
+            <article class="semantic-element">
+                <h3>&lt;article&gt; Element</h3>
+                <p><strong>Purpose:</strong> Represents a complete, self-contained composition that could be distributed independently.</p>
+                <p><strong>Use Cases:</strong> Blog posts, news articles, product cards, comments</p>
+                
+                <div class="example-demo">
+                    <h4>Live Example:</h4>
+                    <!-- Demonstration of article element -->
+                    <article class="demo-article">
+                        <header>
+                            <h4>Understanding CSS Grid</h4>
+                            <p class="meta">Published on <time datetime="2025-09-19">September 19, 2025</time> by John Doe</p>
+                        </header>
+                        <p>CSS Grid Layout is a two-dimensional layout method that allows you to control both rows and columns...</p>
+                        <footer>
+                            <p>Tags: <span class="tag">CSS</span> <span class="tag">Layout</span> <span class="tag">Grid</span></p>
+                        </footer>
+                    </article>
+                </div>
+                
+                <div class="code-snippet">
+                    <h4>HTML Code:</h4>
+                    <pre><code>&lt;article&gt;
+    &lt;header&gt;
+        &lt;h2&gt;Understanding CSS Grid&lt;/h2&gt;
+        &lt;p&gt;Published on &lt;time datetime="2025-09-19"&gt;September 19, 2025&lt;/time&gt;&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;p&gt;CSS Grid Layout is a two-dimensional layout method...&lt;/p&gt;
+    &lt;footer&gt;
+        &lt;p&gt;Tags: CSS, Layout, Grid&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+                </div>
+            </article>
+
+            <!-- Aside element explanation -->
+            <article class="semantic-element">
+                <h3>&lt;aside&gt; Element</h3>
+                <p><strong>Purpose:</strong> Represents content indirectly related to the main content, like sidebars or call-out boxes.</p>
+                <p><strong>Use Cases:</strong> Sidebars, related links, advertisements, author bio</p>
+                
+                <div class="example-demo">
+                    <h4>Live Example:</h4>
+                    <!-- Demonstration of aside element -->
+                    <aside class="demo-aside">
+                        <h4>Did You Know?</h4>
+                        <p>Semantic HTML improves accessibility by providing context to screen readers and other assistive technologies.</p>
+                    </aside>
+                </div>
+            </article>
+        </section>
+
+        <!-- Text-level Semantic Elements -->
+        <section id="text-semantics">
+            <h2>Text-level Semantic Elements</h2>
+            
+            <article class="semantic-element">
+                <h3>Inline Semantic Elements</h3>
+                <p>These elements provide semantic meaning to text within paragraphs and other content.</p>
+                
+                <div class="example-demo">
+                    <h4>Live Examples:</h4>
+                    <div class="text-examples">
+                        <p><strong>&lt;strong&gt;</strong>: <strong>This text is strongly emphasized</strong> (important)</p>
+                        <p><strong>&lt;em&gt;</strong>: <em>This text is emphasized</em> (stress emphasis)</p>
+                        <p><strong>&lt;mark&gt;</strong>: This text is <mark>highlighted</mark> for reference</p>
+                        <p><strong>&lt;code&gt;</strong>: Use <code>console.log()</code> for debugging</p>
+                        <p><strong>&lt;kbd&gt;</strong>: Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy</p>
+                        <p><strong>&lt;samp&gt;</strong>: Output: <samp>Hello, World!</samp></p>
+                        <p><strong>&lt;var&gt;</strong>: The formula is <var>E</var> = <var>mc</var><sup>2</sup></p>
+                        <p><strong>&lt;time&gt;</strong>: The event is on <time datetime="2025-12-25">Christmas Day</time></p>
+                        <p><strong>&lt;abbr&gt;</strong>: <abbr title="HyperText Markup Language">HTML</abbr> is awesome</p>
+                        <p><strong>&lt;dfn&gt;</strong>: <dfn>Semantic HTML</dfn> provides meaning to web content</p>
+                    </div>
+                </div>
+                
+                <div class="code-snippet">
+                    <h4>HTML Code:</h4>
+                    <pre><code>&lt;!-- Strong importance --&gt;
+&lt;strong&gt;This text is strongly emphasized&lt;/strong&gt;
+
+&lt;!-- Stress emphasis --&gt;
+&lt;em&gt;This text is emphasized&lt;/em&gt;
+
+&lt;!-- Highlighted text --&gt;
+&lt;mark&gt;highlighted&lt;/mark&gt;
+
+&lt;!-- Code snippets --&gt;
+&lt;code&gt;console.log()&lt;/code&gt;
+
+&lt;!-- Keyboard input --&gt;
+&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt;
+
+&lt;!-- Sample output --&gt;
+&lt;samp&gt;Hello, World!&lt;/samp&gt;
+
+&lt;!-- Variables --&gt;
+&lt;var&gt;E&lt;/var&gt; = &lt;var&gt;mc&lt;/var&gt;&lt;sup&gt;2&lt;/sup&gt;
+
+&lt;!-- Time and dates --&gt;
+&lt;time datetime="2025-12-25"&gt;Christmas Day&lt;/time&gt;
+
+&lt;!-- Abbreviations --&gt;
+&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;
+
+&lt;!-- Definitions --&gt;
+&lt;dfn&gt;Semantic HTML&lt;/dfn&gt;</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- Interactive Elements -->
+        <section id="interactive-elements">
+            <h2>Interactive Semantic Elements</h2>
+            
+            <article class="semantic-element">
+                <h3>&lt;details&gt; and &lt;summary&gt; Elements</h3>
+                <p><strong>Purpose:</strong> Creates collapsible content sections with accessible expand/collapse functionality.</p>
+                <p><strong>Use Cases:</strong> FAQs, progressive disclosure, accordion interfaces</p>
+                
+                <div class="example-demo">
+                    <h4>Live Examples:</h4>
+                    
+                    <!-- FAQ example -->
+                    <details class="demo-details">
+                        <summary>What is semantic HTML?</summary>
+                        <p>Semantic HTML uses HTML5 elements that clearly describe their meaning to both the browser and the developer. Examples include &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, and &lt;footer&gt;.</p>
+                    </details>
+                    
+                    <details class="demo-details">
+                        <summary>Why use semantic elements?</summary>
+                        <p>Semantic elements improve accessibility, SEO, and code maintainability. They help screen readers understand page structure and provide better context for search engines.</p>
+                    </details>
+                    
+                    <details class="demo-details">
+                        <summary>Advanced Features</summary>
+                        <div class="details-content">
+                            <h5>Benefits include:</h5>
+                            <ul>
+                                <li>Better accessibility</li>
+                                <li>Improved SEO</li>
+                                <li>Cleaner, more maintainable code</li>
+                                <li>Better browser support</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+                
+                <div class="code-snippet">
+                    <h4>HTML Code:</h4>
+                    <pre><code>&lt;!-- Basic details/summary structure --&gt;
+&lt;details&gt;
+    &lt;summary&gt;What is semantic HTML?&lt;/summary&gt;
+    &lt;p&gt;Semantic HTML uses HTML5 elements that clearly describe their meaning...&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- Details with complex content --&gt;
+&lt;details&gt;
+    &lt;summary&gt;Advanced Features&lt;/summary&gt;
+    &lt;div&gt;
+        &lt;h4&gt;Benefits include:&lt;/h4&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Better accessibility&lt;/li&gt;
+            &lt;li&gt;Improved SEO&lt;/li&gt;
+            &lt;li&gt;Cleaner code&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/details&gt;</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- Best Practices Section -->
+        <section id="best-practices">
+            <h2>Semantic HTML Best Practices</h2>
+            
+            <article class="best-practices">
+                <h3>Guidelines for Semantic HTML</h3>
+                
+                <div class="practice-grid">
+                    <div class="practice-item">
+                        <h4>✅ Do</h4>
+                        <ul>
+                            <li>Use semantic elements when their meaning matches your content</li>
+                            <li>Include only one &lt;main&gt; element per page</li>
+                            <li>Use headings (h1-h6) in logical order</li>
+                            <li>Provide alternative text for images</li>
+                            <li>Use &lt;nav&gt; for significant navigation only</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="practice-item">
+                        <h4>❌ Don't</h4>
+                        <ul>
+                            <li>Use semantic elements just for styling purposes</li>
+                            <li>Skip heading levels (h1 → h3)</li>
+                            <li>Put &lt;nav&gt; around every group of links</li>
+                            <li>Use &lt;section&gt; as a generic container</li>
+                            <li>Nest &lt;main&gt; elements</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer consistent with main site -->
+    <footer>
+        <p>&copy; 2025 HTML & CSS Learning Examples. 
+        <a href="index.html">Back to Home</a> | 
+        <a href="#top">Back to Top</a></p>
+    </footer>
+</body>
+</html>

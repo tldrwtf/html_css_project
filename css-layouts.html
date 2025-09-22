@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper document structure -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to CSS layout techniques including Flexbox, Grid, and positioning">
+    <title>CSS Layout Techniques Guide</title>
+    <!-- Link to shared and specific stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css-layouts.css">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header>
+        <h1>CSS Layout Techniques</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="semantic-elements.html">Semantic HTML</a></li>
+                <li><a href="css-layouts.html" class="current">CSS Layouts</a></li>
+                <li><a href="forms-accessibility.html">Forms & Accessibility</a></li>
+                <li><a href="css-showcase.html">CSS Showcase</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Introduction to CSS Layouts -->
+        <section id="introduction">
+            <h2>Modern CSS Layout Methods</h2>
+            <p>CSS provides several powerful layout methods for arranging elements on a webpage. This page demonstrates the three most important modern layout techniques with practical examples and detailed code explanations.</p>
+            
+            <!-- Layout comparison overview -->
+            <article class="layout-overview">
+                <h3>Layout Methods Comparison</h3>
+                <div class="comparison-grid">
+                    <div class="layout-card">
+                        <h4>🔄 Flexbox</h4>
+                        <p><strong>Best for:</strong> One-dimensional layouts (row or column)</p>
+                        <p><strong>Use cases:</strong> Navigation bars, card layouts, centering content</p>
+                    </div>
+                    <div class="layout-card">
+                        <h4>🎯 CSS Grid</h4>
+                        <p><strong>Best for:</strong> Two-dimensional layouts (rows and columns)</p>
+                        <p><strong>Use cases:</strong> Page layouts, image galleries, complex grids</p>
+                    </div>
+                    <div class="layout-card">
+                        <h4>📍 Positioning</h4>
+                        <p><strong>Best for:</strong> Precise element placement</p>
+                        <p><strong>Use cases:</strong> Overlays, fixed headers, absolute positioning</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Flexbox Section -->
+        <section id="flexbox" class="layout-section">
+            <h2>Flexbox Layout</h2>
+            <p>Flexbox (Flexible Box Layout) is perfect for arranging items in a single dimension - either as a row or a column. It provides powerful alignment and distribution capabilities.</p>
+
+            <!-- Basic Flexbox Example -->
+            <article class="layout-example">
+                <h3>Basic Flexbox Container</h3>
+                <p>The most common use of flexbox is to create flexible, responsive layouts where items can grow, shrink, and align properly.</p>
+                
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <!-- Flexbox demo -->
+                    <div class="flex-container basic-flex">
+                        <div class="flex-item">Item 1</div>
+                        <div class="flex-item">Item 2</div>
+                        <div class="flex-item">Item 3</div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>HTML:</h4>
+                    <pre><code>&lt;!-- Flexbox container with three items --&gt;
+&lt;div class="flex-container"&gt;
+    &lt;div class="flex-item"&gt;Item 1&lt;/div&gt;
+    &lt;div class="flex-item"&gt;Item 2&lt;/div&gt;
+    &lt;div class="flex-item"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h4>CSS:</h4>
+                    <pre><code>/* Flex container properties */
+.flex-container {
+    display: flex;           /* Enable flexbox */
+    gap: 10px;              /* Space between items */
+    padding: 20px;
+    background: #f0f8ff;
+    border-radius: 8px;
+}
+
+/* Flex item properties */
+.flex-item {
+    flex: 1;                /* Grow equally to fill space */
+    padding: 15px;
+    background: #0074D9;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+}</code></pre>
+                </div>
+            </article>
+
+            <!-- Flexbox Alignment Examples -->
+            <article class="layout-example">
+                <h3>Flexbox Alignment Options</h3>
+                <p>Flexbox provides powerful alignment options for both the main axis and cross axis.</p>
+
+                <div class="demo-container">
+                    <h4>Justify Content (Main Axis):</h4>
+                    
+                    <!-- Center alignment -->
+                    <div class="alignment-demo">
+                        <h5>justify-content: center</h5>
+                        <div class="flex-container justify-center">
+                            <div class="flex-item small">A</div>
+                            <div class="flex-item small">B</div>
+                            <div class="flex-item small">C</div>
+                        </div>
+                    </div>
+
+                    <!-- Space between -->
+                    <div class="alignment-demo">
+                        <h5>justify-content: space-between</h5>
+                        <div class="flex-container justify-between">
+                            <div class="flex-item small">A</div>
+                            <div class="flex-item small">B</div>
+                            <div class="flex-item small">C</div>
+                        </div>
+                    </div>
+
+                    <!-- Space around -->
+                    <div class="alignment-demo">
+                        <h5>justify-content: space-around</h5>
+                        <div class="flex-container justify-around">
+                            <div class="flex-item small">A</div>
+                            <div class="flex-item small">B</div>
+                            <div class="flex-item small">C</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>CSS for Alignment:</h4>
+                    <pre><code>/* Center items */
+.justify-center {
+    justify-content: center;
+}
+
+/* Distribute items with space between */
+.justify-between {
+    justify-content: space-between;
+}
+
+/* Distribute items with space around */
+.justify-around {
+    justify-content: space-around;
+}
+
+/* Align items vertically */
+.align-center {
+    align-items: center;
+    height: 100px;
+}</code></pre>
+                </div>
+            </article>
+
+            <!-- Responsive Flexbox Navigation -->
+            <article class="layout-example">
+                <h3>Responsive Navigation with Flexbox</h3>
+                <p>A practical example showing how flexbox creates responsive navigation menus.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <nav class="flex-nav">
+                        <div class="nav-brand">Logo</div>
+                        <ul class="nav-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                        <div class="nav-actions">
+                            <button class="btn-primary">Sign Up</button>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="code-example">
+                    <h4>HTML:</h4>
+                    <pre><code>&lt;nav class="flex-nav"&gt;
+    &lt;div class="nav-brand"&gt;Logo&lt;/div&gt;
+    &lt;ul class="nav-links"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="nav-actions"&gt;
+        &lt;button class="btn-primary"&gt;Sign Up&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+                    <h4>CSS:</h4>
+                    <pre><code>.flex-nav {
+    display: flex;
+    justify-content: space-between;  /* Space out sections */
+    align-items: center;             /* Center vertically */
+    padding: 1rem 2rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- CSS Grid Section -->
+        <section id="grid" class="layout-section">
+            <h2>CSS Grid Layout</h2>
+            <p>CSS Grid is a two-dimensional layout system that allows you to control both rows and columns simultaneously. It's perfect for complex layouts and responsive design.</p>
+
+            <!-- Basic Grid Example -->
+            <article class="layout-example">
+                <h3>Basic Grid Layout</h3>
+                <p>CSS Grid excels at creating structured layouts with precise control over both rows and columns.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <div class="grid-container basic-grid">
+                        <div class="grid-item header">Header</div>
+                        <div class="grid-item sidebar">Sidebar</div>
+                        <div class="grid-item main">Main Content</div>
+                        <div class="grid-item footer">Footer</div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>HTML:</h4>
+                    <pre><code>&lt;div class="grid-container"&gt;
+    &lt;div class="grid-item header"&gt;Header&lt;/div&gt;
+    &lt;div class="grid-item sidebar"&gt;Sidebar&lt;/div&gt;
+    &lt;div class="grid-item main"&gt;Main Content&lt;/div&gt;
+    &lt;div class="grid-item footer"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h4>CSS:</h4>
+                    <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;    /* Sidebar + flexible main */
+    grid-template-rows: auto 1fr auto;   /* Header + flexible content + footer */
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    min-height: 300px;
+    gap: 10px;
+}
+
+/* Grid area assignments */
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }</code></pre>
+                </div>
+            </article>
+
+            <!-- Grid Card Layout -->
+            <article class="layout-example">
+                <h3>Responsive Card Grid</h3>
+                <p>CSS Grid makes it easy to create responsive card layouts that adapt to different screen sizes.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <div class="grid-container card-grid">
+                        <div class="card">
+                            <h4>Card 1</h4>
+                            <p>This is a sample card with some content to demonstrate grid layout.</p>
+                        </div>
+                        <div class="card">
+                            <h4>Card 2</h4>
+                            <p>Grid automatically adjusts the number of columns based on available space.</p>
+                        </div>
+                        <div class="card">
+                            <h4>Card 3</h4>
+                            <p>Each card maintains consistent sizing while being responsive.</p>
+                        </div>
+                        <div class="card">
+                            <h4>Card 4</h4>
+                            <p>Perfect for portfolios, product listings, and content galleries.</p>
+                        </div>
+                        <div class="card">
+                            <h4>Card 5</h4>
+                            <p>The grid adjusts automatically as you resize the window.</p>
+                        </div>
+                        <div class="card">
+                            <h4>Card 6</h4>
+                            <p>No media queries needed for this responsive behavior!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>CSS:</h4>
+                    <pre><code>.card-grid {
+    display: grid;
+    /* Responsive grid: minimum 250px columns, fill available space */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}</code></pre>
+                </div>
+            </article>
+
+            <!-- Advanced Grid Layout -->
+            <article class="layout-example">
+                <h3>Complex Grid Layout</h3>
+                <p>Grid can handle complex layouts with items spanning multiple rows and columns.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <div class="grid-container complex-grid">
+                        <div class="grid-item item-1">Feature Article</div>
+                        <div class="grid-item item-2">Article 2</div>
+                        <div class="grid-item item-3">Article 3</div>
+                        <div class="grid-item item-4">Article 4</div>
+                        <div class="grid-item item-5">Article 5</div>
+                        <div class="grid-item item-6">Advertisement</div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>CSS:</h4>
+                    <pre><code>.complex-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
+}
+
+/* Span multiple columns/rows */
+.item-1 { 
+    grid-column: 1 / 3;    /* Span 2 columns */
+    grid-row: 1 / 3;       /* Span 2 rows */
+}
+
+.item-6 { 
+    grid-column: 3 / 5;    /* Span last 2 columns */
+    grid-row: 3;           /* Bottom row */
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- CSS Positioning Section -->
+        <section id="positioning" class="layout-section">
+            <h2>CSS Positioning</h2>
+            <p>CSS positioning allows precise control over element placement. Understanding the different position values is crucial for creating sophisticated layouts.</p>
+
+            <!-- Position Types Overview -->
+            <article class="layout-example">
+                <h3>Position Property Values</h3>
+                <p>CSS offers several positioning methods, each with specific use cases and behaviors.</p>
+
+                <div class="position-demos">
+                    <!-- Static positioning -->
+                    <div class="position-demo">
+                        <h4>Static (Default)</h4>
+                        <div class="position-container">
+                            <div class="positioned-element static">Static Element</div>
+                            <p>Normal document flow. Top, right, bottom, left properties have no effect.</p>
+                        </div>
+                    </div>
+
+                    <!-- Relative positioning -->
+                    <div class="position-demo">
+                        <h4>Relative</h4>
+                        <div class="position-container">
+                            <div class="positioned-element relative">Relative Element</div>
+                            <p>Positioned relative to its normal position. Original space is preserved.</p>
+                        </div>
+                    </div>
+
+                    <!-- Absolute positioning -->
+                    <div class="position-demo">
+                        <h4>Absolute</h4>
+                        <div class="position-container relative-parent">
+                            <div class="positioned-element absolute">Absolute Element</div>
+                            <p>Positioned relative to the nearest positioned ancestor. Removed from normal flow.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fixed positioning -->
+                    <div class="position-demo">
+                        <h4>Fixed</h4>
+                        <div class="position-container">
+                            <div class="positioned-element fixed-demo">Fixed Element</div>
+                            <p>Positioned relative to the viewport. Stays in place when scrolling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>CSS Positioning Examples:</h4>
+                    <pre><code>/* Static positioning (default) */
+.static {
+    position: static;
+    /* top, right, bottom, left have no effect */
+}
+
+/* Relative positioning */
+.relative {
+    position: relative;
+    top: 10px;      /* Move 10px down from normal position */
+    left: 20px;     /* Move 20px right from normal position */
+}
+
+/* Absolute positioning */
+.absolute {
+    position: absolute;
+    top: 10px;      /* 10px from top of positioned parent */
+    right: 10px;    /* 10px from right of positioned parent */
+}
+
+/* Fixed positioning */
+.fixed {
+    position: fixed;
+    bottom: 20px;   /* 20px from bottom of viewport */
+    right: 20px;    /* 20px from right of viewport */
+}
+
+/* Sticky positioning */
+.sticky {
+    position: sticky;
+    top: 0;         /* Stick to top when scrolling */
+}</code></pre>
+                </div>
+            </article>
+
+            <!-- Practical Positioning Example -->
+            <article class="layout-example">
+                <h3>Practical Example: Modal Overlay</h3>
+                <p>A common use case for positioning is creating modal dialogs and overlays.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <button class="open-modal-btn" onclick="document.getElementById('demo-modal').style.display='flex'">Open Modal</button>
+                    
+                    <!-- Modal overlay -->
+                    <div id="demo-modal" class="modal-overlay">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Modal Title</h3>
+                                <button class="close-btn" onclick="document.getElementById('demo-modal').style.display='none'">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <p>This is a modal dialog created using CSS positioning. The overlay covers the entire viewport, and the modal content is centered.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="document.getElementById('demo-modal').style.display='none'">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>HTML:</h4>
+                    <pre><code>&lt;!-- Modal overlay with fixed positioning --&gt;
+&lt;div class="modal-overlay"&gt;
+    &lt;div class="modal-content"&gt;
+        &lt;div class="modal-header"&gt;
+            &lt;h3&gt;Modal Title&lt;/h3&gt;
+            &lt;button class="close-btn"&gt;&amp;times;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="modal-body"&gt;
+            &lt;p&gt;Modal content goes here...&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h4>CSS:</h4>
+                    <pre><code>.modal-overlay {
+    position: fixed;           /* Fixed to viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;            /* Ensure it's on top */
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- Layout Best Practices -->
+        <section id="best-practices" class="layout-section">
+            <h2>Layout Best Practices</h2>
+            
+            <article class="best-practices-grid">
+                <div class="practice-card">
+                    <h3>🎯 Choose the Right Layout Method</h3>
+                    <ul>
+                        <li><strong>Flexbox:</strong> For one-dimensional layouts and component-level design</li>
+                        <li><strong>Grid:</strong> For two-dimensional layouts and page-level structure</li>
+                        <li><strong>Positioning:</strong> For precise placement and overlays</li>
+                    </ul>
+                </div>
+
+                <div class="practice-card">
+                    <h3>📱 Mobile-First Approach</h3>
+                    <ul>
+                        <li>Design for mobile devices first</li>
+                        <li>Use relative units (%, em, rem, vw, vh)</li>
+                        <li>Test on various screen sizes</li>
+                        <li>Consider touch interactions</li>
+                    </ul>
+                </div>
+
+                <div class="practice-card">
+                    <h3>♿ Accessibility Considerations</h3>
+                    <ul>
+                        <li>Ensure logical reading order</li>
+                        <li>Maintain sufficient color contrast</li>
+                        <li>Make interactive elements large enough</li>
+                        <li>Test with keyboard navigation</li>
+                    </ul>
+                </div>
+
+                <div class="practice-card">
+                    <h3>⚡ Performance Tips</h3>
+                    <ul>
+                        <li>Minimize layout thrashing</li>
+                        <li>Use efficient selectors</li>
+                        <li>Avoid excessive nesting</li>
+                        <li>Consider using contain property</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CSS Layout Guide. 
+        <a href="index.html">Back to Home</a> | 
+        <a href="#top">Back to Top</a></p>
+    </footer>
+</body>
+</html>

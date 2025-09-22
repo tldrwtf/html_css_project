@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper document structure -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced CSS styling techniques, animations, transitions, and responsive design patterns">
+    <title>CSS Styling Showcase</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css-showcase.css">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header>
+        <h1>CSS Styling Showcase</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="semantic-elements.html">Semantic HTML</a></li>
+                <li><a href="css-layouts.html">CSS Layouts</a></li>
+                <li><a href="forms-accessibility.html">Forms & Accessibility</a></li>
+                <li><a href="css-showcase.html" class="current">CSS Showcase</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Introduction -->
+        <section id="introduction">
+            <h2>Advanced CSS Styling Techniques</h2>
+            <p>This page showcases modern CSS styling techniques including animations, transitions, custom properties, responsive design patterns, and advanced visual effects.</p>
+            
+            <!-- CSS Features Overview -->
+            <article class="features-overview">
+                <h3>CSS Features Demonstrated</h3>
+                <div class="features-grid">
+                    <div class="feature-card hover-lift">
+                        <div class="feature-icon">🎨</div>
+                        <h4>Modern Styling</h4>
+                        <p>Custom properties, gradients, shadows, and modern layout techniques</p>
+                    </div>
+                    <div class="feature-card hover-lift">
+                        <div class="feature-icon">🎭</div>
+                        <h4>Animations</h4>
+                        <p>CSS keyframes, transitions, and interactive hover effects</p>
+                    </div>
+                    <div class="feature-card hover-lift">
+                        <div class="feature-icon">📱</div>
+                        <h4>Responsive Design</h4>
+                        <p>Mobile-first approach with flexible layouts and breakpoints</p>
+                    </div>
+                    <div class="feature-card hover-lift">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Performance</h4>
+                        <p>Optimized CSS for fast loading and smooth animations</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- CSS Custom Properties -->
+        <section id="custom-properties" class="showcase-section">
+            <h2>CSS Custom Properties (Variables)</h2>
+            <p>CSS custom properties allow you to store values that can be reused throughout your stylesheet, making maintenance easier and enabling dynamic theming.</p>
+
+            <article class="demo-article">
+                <h3>Dynamic Theming with CSS Variables</h3>
+                <p>Click the buttons below to see how CSS custom properties enable easy theme switching.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <div class="theme-controls">
+                        <button class="theme-btn" data-theme="default">Default Theme</button>
+                        <button class="theme-btn" data-theme="dark">Dark Theme</button>
+                        <button class="theme-btn" data-theme="colorful">Colorful Theme</button>
+                        <button class="theme-btn" data-theme="minimal">Minimal Theme</button>
+                    </div>
+
+                    <div class="themed-component" id="themed-demo">
+                        <h4>Themed Component</h4>
+                        <p>This component changes appearance based on the selected theme using CSS custom properties.</p>
+                        <div class="component-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">150</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">50K</span>
+                                <span class="stat-label">Users</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">99%</span>
+                                <span class="stat-label">Uptime</span>
+                            </div>
+                        </div>
+                        <button class="themed-button">Action Button</button>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>CSS Variables:</h4>
+                    <pre><code>/* Define custom properties in :root */
+:root {
+    --primary-color: #0074D9;
+    --secondary-color: #7FDBFF;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Use variables throughout your CSS */
+.themed-component {
+    background: var(--background-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.themed-button {
+    background: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+}
+
+/* Theme variations */
+[data-theme="dark"] {
+    --primary-color: #bb86fc;
+    --secondary-color: #03dac6;
+    --background-color: #121212;
+    --text-color: #ffffff;
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- CSS Animations -->
+        <section id="animations" class="showcase-section">
+            <h2>CSS Animations & Transitions</h2>
+            <p>CSS animations and transitions bring your interfaces to life, providing visual feedback and creating engaging user experiences.</p>
+
+            <!-- Keyframe Animations -->
+            <article class="demo-article">
+                <h3>Keyframe Animations</h3>
+                <p>Complex animations using CSS @keyframes for sequences of style changes.</p>
+
+                <div class="demo-container">
+                    <h4>Live Examples:</h4>
+                    <div class="animation-showcase">
+                        <div class="animation-item">
+                            <div class="floating-element">
+                                <div class="floating-inner">Floating</div>
+                            </div>
+                            <p>Floating Animation</p>
+                        </div>
+
+                        <div class="animation-item">
+                            <div class="rotating-element">
+                                <div class="rotating-inner">🎯</div>
+                            </div>
+                            <p>Rotating Icon</p>
+                        </div>
+
+                        <div class="animation-item">
+                            <div class="pulsing-element">
+                                <div class="pulsing-inner">Pulse</div>
+                            </div>
+                            <p>Pulsing Effect</p>
+                        </div>
+
+                        <div class="animation-item">
+                            <div class="loading-spinner">
+                                <div class="spinner-inner"></div>
+                            </div>
+                            <p>Loading Spinner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>Keyframe Animation Examples:</h4>
+                    <pre><code>/* Floating animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.floating-element {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Rotation animation */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.rotating-element {
+    animation: rotate 2s linear infinite;
+}
+
+/* Pulsing effect */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.pulsing-element {
+    animation: pulse 2s ease-in-out infinite;
+}</code></pre>
+                </div>
+            </article>
+
+            <!-- Hover Animations -->
+            <article class="demo-article">
+                <h3>Interactive Hover Effects</h3>
+                <p>Smooth transitions that respond to user interactions, providing immediate visual feedback.</p>
+
+                <div class="demo-container">
+                    <h4>Live Examples (Hover to see effects):</h4>
+                    <div class="hover-effects-grid">
+                        <div class="hover-card lift-on-hover">
+                            <h5>Lift Effect</h5>
+                            <p>Card lifts up on hover with shadow</p>
+                        </div>
+
+                        <div class="hover-card scale-on-hover">
+                            <h5>Scale Effect</h5>
+                            <p>Card scales up smoothly</p>
+                        </div>
+
+                        <div class="hover-card tilt-on-hover">
+                            <h5>Tilt Effect</h5>
+                            <p>Card tilts with 3D rotation</p>
+                        </div>
+
+                        <div class="hover-card glow-on-hover">
+                            <h5>Glow Effect</h5>
+                            <p>Card glows with colored border</p>
+                        </div>
+
+                        <div class="hover-card slide-on-hover">
+                            <h5>Slide Effect</h5>
+                            <p>Content slides in from bottom</p>
+                            <div class="slide-content">Hidden content appears!</div>
+                        </div>
+
+                        <div class="hover-card flip-on-hover">
+                            <div class="flip-inner">
+                                <div class="flip-front">
+                                    <h5>Flip Effect</h5>
+                                    <p>Hover to flip</p>
+                                </div>
+                                <div class="flip-back">
+                                    <h5>Back Side</h5>
+                                    <p>Card flipped successfully!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>Hover Effect Examples:</h4>
+                    <pre><code>/* Lift effect with shadow */
+.lift-on-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lift-on-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* 3D flip effect */
+.flip-on-hover {
+    perspective: 1000px;
+}
+
+.flip-inner {
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-on-hover:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+    backface-visibility: hidden;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- Modern CSS Features -->
+        <section id="modern-features" class="showcase-section">
+            <h2>Modern CSS Features</h2>
+            <p>Explore cutting-edge CSS features that enhance visual design and user experience.</p>
+
+            <!-- CSS Grid Art -->
+            <article class="demo-article">
+                <h3>CSS Grid Art & Complex Layouts</h3>
+                <p>Creative use of CSS Grid to create artistic layouts and complex designs.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <div class="grid-art-container">
+                        <div class="grid-art">
+                            <div class="grid-item item-1">A</div>
+                            <div class="grid-item item-2">B</div>
+                            <div class="grid-item item-3">C</div>
+                            <div class="grid-item item-4">D</div>
+                            <div class="grid-item item-5">E</div>
+                            <div class="grid-item item-6">F</div>
+                            <div class="grid-item item-7">G</div>
+                            <div class="grid-item item-8">H</div>
+                            <div class="grid-item item-9">I</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>Complex Grid Layout:</h4>
+                    <pre><code>.grid-art {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 60px);
+    gap: 4px;
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Artistic grid item positioning */
+.item-1 { grid-area: 1 / 1 / 3 / 3; }
+.item-2 { grid-area: 1 / 3 / 2 / 5; }
+.item-3 { grid-area: 1 / 5 / 3 / 7; }
+.item-4 { grid-area: 2 / 3 / 3 / 4; }
+.item-5 { grid-area: 2 / 4 / 4 / 5; }
+.item-6 { grid-area: 3 / 1 / 5 / 2; }
+.item-7 { grid-area: 3 / 2 / 4 / 4; }
+.item-8 { grid-area: 3 / 5 / 5 / 7; }
+.item-9 { grid-area: 4 / 2 / 5 / 4; }</code></pre>
+                </div>
+            </article>
+
+            <!-- CSS Clip-path and Masks -->
+            <article class="demo-article">
+                <h3>CSS Clip-path & Creative Shapes</h3>
+                <p>Using clip-path to create custom shapes and creative visual effects.</p>
+
+                <div class="demo-container">
+                    <h4>Live Examples:</h4>
+                    <div class="clip-path-showcase">
+                        <div class="shape-item">
+                            <div class="shape triangle-shape">
+                                <div class="shape-content">Triangle</div>
+                            </div>
+                        </div>
+
+                        <div class="shape-item">
+                            <div class="shape hexagon-shape">
+                                <div class="shape-content">Hexagon</div>
+                            </div>
+                        </div>
+
+                        <div class="shape-item">
+                            <div class="shape star-shape">
+                                <div class="shape-content">Star</div>
+                            </div>
+                        </div>
+
+                        <div class="shape-item">
+                            <div class="shape wave-shape">
+                                <div class="shape-content">Wave</div>
+                            </div>
+                        </div>
+
+                        <div class="shape-item">
+                            <div class="shape arrow-shape">
+                                <div class="shape-content">Arrow</div>
+                            </div>
+                        </div>
+
+                        <div class="shape-item">
+                            <div class="shape circle-cut-shape">
+                                <div class="shape-content">Circle Cut</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>Clip-path Examples:</h4>
+                    <pre><code>/* Triangle shape */
+.triangle-shape {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* Hexagon shape */
+.hexagon-shape {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* Star shape */
+.star-shape {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Wave shape */
+.wave-shape {
+    clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+}
+
+/* Arrow shape */
+.arrow-shape {
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- Responsive Design Patterns -->
+        <section id="responsive-patterns" class="showcase-section">
+            <h2>Responsive Design Patterns</h2>
+            <p>Modern responsive design techniques that adapt seamlessly across all device sizes.</p>
+
+            <!-- Fluid Typography -->
+            <article class="demo-article">
+                <h3>Fluid Typography & Spacing</h3>
+                <p>Typography that scales smoothly across screen sizes using clamp() and viewport units.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example (Resize window to see effect):</h4>
+                    <div class="fluid-typography-demo">
+                        <h1 class="fluid-heading">Fluid Heading</h1>
+                        <h2 class="fluid-subheading">Responsive Subheading</h2>
+                        <p class="fluid-text">
+                            This text demonstrates fluid typography that scales smoothly between minimum and maximum sizes based on the viewport width. No media queries needed!
+                        </p>
+                        <div class="fluid-spacing-demo">
+                            <div class="fluid-card">Card 1</div>
+                            <div class="fluid-card">Card 2</div>
+                            <div class="fluid-card">Card 3</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>Fluid Typography CSS:</h4>
+                    <pre><code>/* Fluid typography using clamp() */
+.fluid-heading {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.2;
+}
+
+.fluid-subheading {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.3;
+}
+
+.fluid-text {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: clamp(1.5, 2vw, 1.8);
+}
+
+/* Fluid spacing */
+.fluid-spacing-demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+    margin-top: clamp(1rem, 4vw, 3rem);
+}</code></pre>
+                </div>
+            </article>
+
+            <!-- Container Queries -->
+            <article class="demo-article">
+                <h3>Container-Based Responsive Design</h3>
+                <p>Modern responsive patterns using container queries and intrinsic sizing.</p>
+
+                <div class="demo-container">
+                    <h4>Live Example:</h4>
+                    <div class="container-query-demo">
+                        <div class="resizable-container">
+                            <div class="adaptive-component">
+                                <div class="component-header">
+                                    <h4>Adaptive Component</h4>
+                                    <span class="status-badge">Active</span>
+                                </div>
+                                <div class="component-content">
+                                    <p>This component adapts its layout based on container size, not viewport size.</p>
+                                    <div class="action-buttons">
+                                        <button class="action-btn primary">Primary</button>
+                                        <button class="action-btn secondary">Secondary</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-controls">
+                            <label for="container-width">Container Width:</label>
+                            <input type="range" id="container-width" min="300" max="800" value="500">
+                            <span id="width-display">500px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>Container Query CSS:</h4>
+                    <pre><code>/* Container queries (where supported) */
+.resizable-container {
+    container-type: inline-size;
+    container-name: adaptive-container;
+}
+
+@container adaptive-container (max-width: 400px) {
+    .adaptive-component .component-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@container adaptive-container (min-width: 600px) {
+    .adaptive-component {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+    }
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- Performance & Best Practices -->
+        <section id="performance" class="showcase-section">
+            <h2>Performance & Best Practices</h2>
+            <p>CSS optimization techniques for better performance and maintainability.</p>
+
+            <article class="best-practices-grid">
+                <div class="practice-section">
+                    <h3>🚀 Performance Tips</h3>
+                    <ul class="tips-list">
+                        <li><strong>Use efficient selectors:</strong> Avoid deep nesting and complex selectors</li>
+                        <li><strong>Minimize repaints:</strong> Use transform and opacity for animations</li>
+                        <li><strong>Critical CSS:</strong> Inline critical styles for faster initial render</li>
+                        <li><strong>CSS containment:</strong> Use contain property to isolate layout changes</li>
+                        <li><strong>Optimize images:</strong> Use modern formats and appropriate sizing</li>
+                    </ul>
+                </div>
+
+                <div class="practice-section">
+                    <h3>🎨 Modern CSS Features</h3>
+                    <ul class="tips-list">
+                        <li><strong>Custom properties:</strong> Use CSS variables for maintainable themes</li>
+                        <li><strong>Logical properties:</strong> Use margin-inline, padding-block for i18n</li>
+                        <li><strong>CSS Grid & Flexbox:</strong> Modern layout methods over floats</li>
+                        <li><strong>clamp():</strong> Fluid sizing without media queries</li>
+                        <li><strong>:has() selector:</strong> Parent selection based on children</li>
+                    </ul>
+                </div>
+
+                <div class="practice-section">
+                    <h3>📱 Responsive Strategy</h3>
+                    <ul class="tips-list">
+                        <li><strong>Mobile-first:</strong> Start with mobile styles, enhance for larger screens</li>
+                        <li><strong>Flexible grids:</strong> Use fr units and auto-fit/auto-fill</li>
+                        <li><strong>Fluid typography:</strong> Scale text smoothly across devices</li>
+                        <li><strong>Touch targets:</strong> Ensure interactive elements are large enough</li>
+                        <li><strong>Performance budget:</strong> Monitor CSS size and complexity</li>
+                    </ul>
+                </div>
+
+                <div class="practice-section">
+                    <h3>♿ Accessibility Focus</h3>
+                    <ul class="tips-list">
+                        <li><strong>Focus indicators:</strong> Visible focus states for keyboard users</li>
+                        <li><strong>Color contrast:</strong> Meet WCAG guidelines for text readability</li>
+                        <li><strong>Motion preferences:</strong> Respect prefers-reduced-motion</li>
+                        <li><strong>Screen readers:</strong> Don't hide content that should be announced</li>
+                        <li><strong>Semantic markup:</strong> Style semantic HTML, don't replace it</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CSS Styling Showcase. 
+        <a href="index.html">Back to Home</a> | 
+        <a href="#top">Back to Top</a></p>
+    </footer>
+
+    <!-- JavaScript for interactive demos -->
+    <script>
+        // Theme switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeButtons = document.querySelectorAll('.theme-btn');
+            const themedDemo = document.getElementById('themed-demo');
+            
+            themeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const theme = this.dataset.theme;
+                    themedDemo.setAttribute('data-theme', theme);
+                    
+                    // Update active button
+                    themeButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Set default active theme
+            document.querySelector('[data-theme="default"]').classList.add('active');
+            
+            // Container width control
+            const widthSlider = document.getElementById('container-width');
+            const widthDisplay = document.getElementById('width-display');
+            const resizableContainer = document.querySelector('.resizable-container');
+            
+            if (widthSlider && widthDisplay && resizableContainer) {
+                widthSlider.addEventListener('input', function() {
+                    const width = this.value + 'px';
+                    resizableContainer.style.width = width;
+                    widthDisplay.textContent = width;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
